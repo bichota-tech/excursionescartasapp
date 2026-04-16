@@ -30,6 +30,32 @@ p {
   font-size: clamp(.9rem, 2vw, 1.1rem);
 }
 
+/* Títulos de sección con decoración automática */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(.9rem, 2.5vw, 1.4rem);
+  color: var(--navegation);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  height: 2px;
+  width: clamp(20px, 5vw, 60px);
+  background-color: var(--atomic);
+  flex-shrink: 0;
+}
+
+.section-title.accent span {
+  color: var(--atomic);
+}
+
 /* =============================================
    SECTION / LAYOUT
    ============================================= */
@@ -53,121 +79,174 @@ section {
 }
 
 /* =============================================
-   FORMAS DECORATIVAS & UTILIDADES
+   PAGE HERO UNIFICADO
    ============================================= */
-.diagfirst {
-  border-radius: 50% 0 !important;
+.page-hero {
+  width: 100%;
+  height: clamp(14rem, 35vw, 22rem);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
 }
 
-.diagsecond {
-  border-radius: 0 50% !important;
+.page-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.2) brightness(0.65);
+  z-index: 1;
 }
 
-.imgtop {
-  border-radius: 30% 0 !important;
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--ligth_bgd);
+  max-width: 800px;
 }
 
-.imgbottom {
-  border-radius: 0 30% !important;
+.page-hero-content h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  margin-bottom: .5rem;
+}
+
+.page-hero-content p {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 /* =============================================
-   CTA & BOTONES
+   FORMAS DECORATIVAS & UTILIDADES
+   ============================================= */
+.diagfirst { border-radius: 50% 0 !important; }
+.diagsecond { border-radius: 0 50% !important; }
+.imgtop { border-radius: 30% 0 !important; }
+.imgbottom { border-radius: 0 30% !important; }
+
+/* =============================================
+   BTNS & INTERACCIÓN
    ============================================= */
 .cta {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: .7rem;
+  gap: 1rem;
   flex-wrap: wrap;
   margin-block: 1.5rem;
   width: 100%;
 }
 
-.cta button,
-.cta .btn-primary {
-  padding: .7rem 1.2rem;
-  font-size: clamp(.9rem, 2vw, 1.2rem);
+.btn-primary,
+.btn-secondary {
+  padding: .75rem 1.5rem;
   font-family: 'Montserrat', sans-serif;
-  background-color: var(--navegation);
-  color: var(--ligth_bgd);
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+  font-size: clamp(.9rem, 1.8vw, 1.05rem);
+  font-weight: 700;
   text-decoration: none;
-  transition: transform ease-in-out .3s, background-color .3s;
-}
-
-.cta button:hover,
-.cta .btn-primary:hover {
-  transform: scale(1.05);
-  background-color: var(--smart_blue);
-}
-
-.cta a.btn-contact,
-.cta a#btn-contact {
-  color: var(--text_primary);
-  cursor: pointer;
-  border: 3px solid var(--navegation);
   border-radius: 15px;
-  padding: .5rem 1rem;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(.9rem, 2vw, 1.2rem);
-  transition: transform ease-in-out .3s, background-color .3s;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: .3rem;
+  gap: .5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
-.cta a.btn-contact:hover,
-.cta a#btn-contact:hover {
+/* Primario: Naranja / Atómico */
+.btn-primary {
+  background-color: var(--atomic);
+  color: white;
+  box-shadow: 0 4px 14px rgba(255, 119, 63, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 119, 63, 0.45);
+  filter: brightness(1.1);
+}
+
+/* Secundario: Azul / Navegación */
+.btn-secondary {
   background-color: var(--navegation);
-  color: var(--ligth_bgd);
-  transform: scale(1.05);
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 51, 128, 0.2);
 }
 
-.cta a.btn-contact i,
-.cta a#btn-contact i {
-  color: green;
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background-color: var(--smart_blue);
+  box-shadow: 0 6px 20px rgba(11, 74, 193, 0.3);
+}
+
+/* Variante Contorno para Fondos Oscuros o Contraste */
+.btn-outline {
+  background: transparent;
+  border: 2px solid currentColor;
+  color: inherit;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
 }
 
 /* =============================================
    CARDS & GRIDS
    ============================================= */
+.card-base {
+  background: white;
+  border-radius: 12px 0;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.card-base:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
 .card-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   margin: 0 auto;
 }
 
-.card-list .card-icon {
+.card-icon {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
   background-color: var(--navegation);
-  padding: 1.5rem;
+  padding: 2rem;
   overflow: hidden;
   width: 100%;
   height: 100%;
   position: relative;
+  color: white;
 }
 
 .card-icon i {
-  font-size: clamp(1.6rem, 3vw, 1.8rem);
-  margin-bottom: .8rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
   color: var(--ligth_bgd);
 }
 
 .card-icon span {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(.9rem, 2vw, 1.2rem);
-  color: var(--ligth_bgd);
+  font-size: clamp(.9rem, 2vw, 1.15rem);
   line-height: 1.5;
   display: block;
 }
@@ -180,21 +259,22 @@ section {
   width: 60px;
   height: 60px;
   bottom: 40px;
-  left: 10px;
-  background-color: rgba(0, 128, 0, 0.685);
-  color: var(--ligth_bgd);
+  left: 20px;
+  background-color: var(--whatsapp-green);
+  color: white;
   border-radius: 50%;
   text-align: center;
-  font-size: clamp(2.3rem, 5vh, 3.5rem);
-  box-shadow: 2px 2px 3px var(--shadow);
+  font-size: 2.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .whatsapp-float:hover {
-  background-color: darkgreen;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
