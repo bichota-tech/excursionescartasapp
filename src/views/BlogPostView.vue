@@ -76,9 +76,7 @@
 
       <!-- También han leído -->
       <section class="related-posts" aria-labelledby="related-heading">
-        <h2 id="related-heading" class="section-title accent">
-          <span>----- </span> También han leído... <span> -----</span>
-        </h2>
+        <h2 id="related-heading" class="section-title">También han leído...</h2>
         <div class="related-grid" role="list">
           <article
             v-for="related in relatedPosts"
@@ -308,21 +306,8 @@ const relatedPosts = computed(() => blogStore.getRelatedPosts(route.params.slug)
 .sidebar-cta h3 { color: white; text-align: center; font-size: clamp(1rem, 2.5vw, 1.3rem); }
 .sidebar-cta p  { color: rgba(255,255,255,0.85); font-size: .95rem; }
 
-.btn-primary {
-  display: inline-block;
-  padding: .7rem 1.2rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .95rem;
-  background-color: var(--atomic);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: transform .3s;
-  text-align: center;
-}
 
-.btn-primary:hover { transform: scale(1.05); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255, 119, 63, 0.2); }
 
 .btn-whatsapp {
   display: inline-flex;
@@ -355,13 +340,13 @@ const relatedPosts = computed(() => blogStore.getRelatedPosts(route.params.slug)
 .related-card {
   border-radius: 12px 0;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,51,128,0.12);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   transition: transform .35s, box-shadow .35s;
 }
 
-.related-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,51,128,0.2); }
+.related-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
 
 .related-img {
   position: relative;

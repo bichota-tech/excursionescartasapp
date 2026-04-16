@@ -31,7 +31,7 @@
           <p>Descubre los Países Bajos a través de nuestras excursiones académicas diseñadas para estudiantes.</p>
           <div class="cta">
             <RouterLink to="/servicios" class="btn-primary">Ver Excursiones</RouterLink>
-            <a href="https://wa.me/640947912" class="btn-contact" style="color: white;" aria-label="Enviar mensaje por WhatsApp">
+            <a href="https://wa.me/640947912" class="btn-secondary" aria-label="Enviar mensaje por WhatsApp">
               <i class="bi bi-whatsapp" aria-hidden="true"></i> Enviar Mensaje
             </a>
           </div>
@@ -41,7 +41,6 @@
 
     <!-- Cards de características -->
     <section class="home-section" id="home" aria-labelledby="home-heading">
-      <h2 id="home-heading" class="sr-only">Por qué elegirnos</h2>
       <div class="homecontainer">
         <div class="card-list stagger" role="list">
           <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
@@ -62,7 +61,7 @@
           </article>
           <div class="cta" style="grid-column: 1 / 3;">
             <RouterLink to="/servicios" class="btn-primary">Ver Excursiones</RouterLink>
-            <a href="tel:+34640947912" class="btn-contact" aria-label="Llamar al +34 640 947 912">
+            <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
               <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
             </a>
           </div>
@@ -81,9 +80,8 @@
 
     <!-- About Section Preview -->
     <section class="about-section" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">
-        <span style="color:#FF773F;">----- </span> Excursiones Carta
-        <span style="color:#FF773F;"> -----</span>
+      <h2 id="about-heading" class="section-title">
+        Excursiones Cartas
       </h2>
       <div class="aboutcontainer">
         <div class="information stagger">
@@ -100,7 +98,7 @@
         </div>
         <div class="cta">
           <RouterLink to="/sobre-mi" class="btn-primary">Conoce más sobre mí</RouterLink>
-          <a href="tel:+34640947912" class="btn-contact" aria-label="Llamar al +34 640 947 912">
+          <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
             <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
           </a>
         </div>
@@ -111,42 +109,42 @@
         <div class="info">
           <h3>¿A quiénes va dirigido?</h3>
           <div class="card-list stagger" role="list">
-            <article class="card-icon" v-anim="'slide-top'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+            <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
               <span>Facultades de Historia del Arte.</span>
             </article>
-            <article class="card-icon" v-anim="'slide-right'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+            <article class="card-icon diagsecond" v-anim="'slide-right'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
               <span>Programas de Museología.</span>
             </article>
-            <article class="card-icon" v-anim="'slide-left'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+            <article class="card-icon diagsecond" v-anim="'slide-left'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
               <span>Estudios de Patrimonio.</span>
             </article>
-            <article class="card-icon" v-anim="'slide-bottom'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+            <article class="card-icon diagfirst" v-anim="'slide-bottom'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
               <span>Minors, masters y viajes de estudio.</span>
             </article>
           </div>
           <div class="cta">
             <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
-            <a href="tel:+34640947912" class="btn-contact" aria-label="Llamar al +34 640 947 912">
+            <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
               <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
             </a>
           </div>
         </div>
 
-        <div class="img-rigth-grid stagger" v-anim="'draw-border'">
-          <div class="rigth-grid imgtop" v-anim="'slide-right'">
+        <div class="img-right-grid stagger" v-anim="'draw-border'">
+          <div class="right-grid imgtop" v-anim="'slide-right'">
             <img src="/img/students_museum.png" class="slide" alt="Grupo de estudiantes visitando un museo holandés" />
           </div>
-          <div class="rigth-grid imgbottom" v-anim="'slide-right'">
+          <div class="right-grid imgbottom" v-anim="'slide-right'">
             <img src="/img/students_canal.png" class="slide" alt="Estudiantes en los canales de Utrecht" />
           </div>
-          <div class="rigth-grid imgbottom" v-anim="'slide-left'">
+          <div class="right-grid imgbottom" v-anim="'slide-left'">
             <img src="/img/students_streets.png" class="slide" alt="Estudiantes explorando las calles medievales de Utrecht" />
           </div>
-          <div class="rigth-grid imgtop" v-anim="'slide-left'">
+          <div class="right-grid imgtop" v-anim="'slide-left'">
             <img src="/img/hero_home.png" class="slide" alt="Estudiantes con guía en los canales de los Países Bajos" />
           </div>
         </div>
@@ -155,16 +153,15 @@
 
     <!-- Services Preview -->
     <section class="services-section" id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">
-        <span style="color:#FF773F;">----- </span> Nuestros Servicios
-        <span style="color:#FF773F;"> -----</span>
+      <h2 id="services-heading" class="section-title">
+        Nuestros Servicios
       </h2>
       <div class="servcontent">
         <div class="backflayer imgtop" aria-hidden="true">
           <div class="activity imgtop">
             <h3 class="bungee text-white">VIAJA A</h3>
             <svg viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" aria-label="PAÍSES BAJOS" role="img">
-              <text x="50" y="130" class="svg-text" fill="transparent" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">
+              <text x="180" y="130" class="svg-text" fill="transparent" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">
                 PAÍSES BAJOS
               </text>
             </svg>
@@ -225,14 +222,24 @@
             </div>
             <div class="cta">
               <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
-              <a href="tel:+34640947912" class="btn-contact" aria-label="Llamar al +34 640 947 912">
+              <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
                 <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="img-right diagsecond" role="img" aria-label="Estudiantes en excursión"></div>
+      <!-- CTA Final con imagen de fondo -->
+      <div class="img-right footer-cta" role="region" aria-label="Llamada a la acción final">
+        <div class="footer-cta-content" v-anim="'slide-left'">
+          <h2>¿Listo para tu próxima aventura académica?</h2>
+          <p>Únete a cientos de estudiantes que ya han descubierto los Países Bajos con nuestras rutas personalizadas.</p>
+          <div class="cta">
+            <RouterLink to="/contacto" class="btn-primary">Reservar ahora</RouterLink>
+            <RouterLink to="/servicios" class="btn-secondary">Explorar más</RouterLink>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -242,6 +249,10 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
+i.bi{
+  font-size: 1.6rem;
+}
+
 /* ─── Hero ─────────────────────────────────────────────── */
 .hero-section {
   width: 100%;
@@ -316,39 +327,6 @@ video {
   text-align: center;
 }
 
-.btn-primary {
-  padding: .7rem 1.2rem;
-  font-size: clamp(.9rem, 2vw, 1.2rem);
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--navegation);
-  color: var(--ligth_bgd) !important;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform .3s, background-color .3s;
-  display: inline-block;
-}
-
-.btn-primary:hover { transform: scale(1.05); background-color: var(--smart_blue); }
-
-.btn-contact {
-  padding: .6rem 1rem;
-  cursor: pointer;
-  font-size: clamp(.9rem, 2vw, 1.2rem);
-  font-family: 'Montserrat', sans-serif;
-  color: var(--ligth_bgd);
-  border: 2px solid var(--navegation);
-  border-radius: 15px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-  transition: transform .3s, background-color .3s;
-}
-
-.btn-contact:hover { background-color: var(--navegation); transform: scale(1.05); }
-.btn-contact i { color: green; }
 
 /* ─── Home Section ──────────────────────────────────────── */
 .home-section { margin-top: 2rem; }
@@ -367,8 +345,39 @@ video {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 80%;
-  height: 50vh;
+  width: 100%;
+  height: clamp(25rem, 60vh, 35rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.footer-cta-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2.5rem;
+  border-radius: 20px;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.footer-cta-content h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  text-align: inherit;
+}
+
+.footer-cta-content p {
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  opacity: 0.95;
 }
 
 .circle-exp {
@@ -468,33 +477,27 @@ video {
   height: auto;
   margin-bottom: 2rem;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
 .clients .card-icon {
   width: 100%;
-  min-height: 3rem;
+  min-height: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  box-shadow: 5px 5px 7px -1px rgba(11,74,193,0.75);
+  gap: .5rem;
+  padding: 1.2rem;
+  box-shadow: 4px 3px 9px -1px var(--navegation);
   background-color: transparent;
   text-align: left;
-  border-radius: 0 0 40% 0;
 }
 
 .clients .card-icon i {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  border-radius: 50%;
-  background-color: var(--navegation);
-  padding: .8rem;
+  font-size: clamp(1rem, 2vw, 1.6rem);
   color: white;
   margin-bottom: 0;
 }
@@ -506,18 +509,18 @@ video {
   font-weight: 600;
 }
 
-.img-rigth-grid {
+.img-right-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  max-width: 900px;
+  width: 60%;
   margin: 0 auto;
   padding: .5rem;
   border-radius: 12%;
   color: var(--atomic);
 }
 
-.rigth-grid {
+.right-grid {
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -538,7 +541,7 @@ img.slide {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
 }
 
@@ -547,7 +550,7 @@ img.slide {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('/img/utrecht_aerial.png');
+  background-image: url('./img/utrecht_aerial.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -557,7 +560,7 @@ img.slide {
   filter: drop-shadow(10px 10px 5px #0f0f0f5b);
 }
 
-.activity {
+.activity.imgtop {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -565,8 +568,8 @@ img.slide {
   text-align: center;
   width: 100%;
   height: auto;
-  padding: 2em;
-  background-color: #0f0f0f5b;
+  padding: 1.5rem 2rem 2rem 1rem;
+  background-color: rgba(15, 15, 15, 0.37);
 }
 
 .bungee {
@@ -585,14 +588,14 @@ img.slide {
 .activity h4 { color: white; margin-block: 1rem; width: 100%; text-align: center; }
 
 .actinfo {
-  width: 90%;
+  width: 95%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  background-color: #0f0f0f5b;
+  gap: .8rem;
+  background-color: #0f0f0f70;
   border-radius: 15px;
 }
 
@@ -603,16 +606,18 @@ img.slide {
   align-items: flex-start;
   gap: .8rem;
   text-align: left;
-  width: 100%;
+  width: 50%;
 }
 
 .actinfo .info p { color: white; font-weight: 600; }
 
 #ico {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   background-color: var(--atomic);
   border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: .3rem;
   flex-shrink: 0;
 }
@@ -705,7 +710,17 @@ img.slide {
     gap: .8rem;
   }
 
-  .img-right.diagfirst { width: 40%; height: 80vh; }
+  .img-right { width: 100%; height: 80vh; }
+  
+  .footer-cta {
+    justify-content: flex-end;
+    padding-right: 5%;
+  }
+
+  .footer-cta-content {
+    text-align: left;
+    max-width: 500px;
+  }
 
   .circle-exp { right: -60%; top: 63%; }
 
@@ -721,11 +736,8 @@ img.slide {
   .clients { padding-inline: 1rem; gap: 4rem; flex-direction: row; }
 
   .clients .card-list {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
     margin-block: 4rem;
-    width: auto;
+    width: 100%;
     min-width: 40%;
   }
 
@@ -734,7 +746,6 @@ img.slide {
     justify-content: center;
     align-items: center;
     background-color: white;
-    box-shadow: 5px 5px 7px -1px rgba(11,74,193,0.75);
   }
 
   .clients .card-list .card-icon span { text-align: center; }

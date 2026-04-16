@@ -13,9 +13,7 @@
 
       <!-- Sección: ¿Qué ofrecemos? -->
       <section class="what-section" aria-labelledby="what-heading">
-        <h2 id="what-heading" class="section-title accent">
-          <span>----- </span> ¿Qué ofrecemos? <span> -----</span>
-        </h2>
+        <h2 id="what-heading" class="section-title">¿Qué ofrecemos?</h2>
         <div class="services-grid">
           <article class="service-card diagfirst" v-anim="'slide-left'">
             <div class="service-icon" aria-hidden="true"><i class="bi bi-map"></i></div>
@@ -52,9 +50,7 @@
 
       <!-- Sección: ¿A quiénes va dirigido? -->
       <section class="targets-section" aria-labelledby="targets-heading">
-        <h2 id="targets-heading" class="section-title accent">
-          <span>----- </span> ¿A quiénes va dirigido? <span> -----</span>
-        </h2>
+        <h2 id="targets-heading" class="section-title">¿A quiénes va dirigido?</h2>
         <div class="targets-grid">
           <article class="target-card" v-anim="'slide-top'">
             <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
@@ -81,9 +77,7 @@
 
       <!-- Sección: VIAJA A - con el mismo diseño del original -->
       <section class="travel-section" aria-labelledby="travel-heading">
-        <h2 id="travel-heading" class="section-title accent">
-          <span>----- </span> Destinos Principales <span> -----</span>
-        </h2>
+        <h2 id="travel-heading" class="section-title">Destinos Principales</h2>
         <div class="travel-grid">
           <div class="destination-card diagfirst" v-anim="'slide-left'">
             <img src="/img/utrecht_aerial.png" alt="Vista aérea de Utrecht con su famosa Torre Dom" />
@@ -180,7 +174,7 @@
               </div>
               <div class="cta">
                 <RouterLink to="/contacto" class="btn-primary">Solicitar información</RouterLink>
-                <a href="tel:+34640947912" class="btn-contact" aria-label="Llamar al +34 640 947 912">
+                <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
                   <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
                 </a>
               </div>
@@ -334,7 +328,7 @@ section { margin-bottom: 5rem; }
   filter: drop-shadow(10px 10px 5px #0f0f0f5b);
 }
 
-.activity {
+.activity.imgtop {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -342,7 +336,7 @@ section { margin-bottom: 5rem; }
   text-align: center;
   width: 100%;
   padding: 2em;
-  background-color: #0f0f0f5b;
+  background-color: #0f0f0f;
 }
 
 .bungee { font-family: 'Bungee', cursive; font-size: 30px; margin-bottom: 0; }
@@ -352,12 +346,12 @@ section { margin-bottom: 5rem; }
 .activity h4 { color: white; margin-block: 1rem; }
 
 .actinfo {
-  width: 90%;
+  width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: #0f0f0f5b;
+  background-color: #0f0f0f;
   border-radius: 15px;
 }
 
@@ -384,33 +378,7 @@ section { margin-bottom: 5rem; }
 .explain { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; max-width: 700px; }
 .explain h3 { margin-bottom: 1.5rem; }
 
-.btn-primary {
-  padding: .7rem 1.4rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(.9rem, 2vw, 1.1rem);
-  background-color: var(--navegation);
-  color: white;
-  border: none;
-  border-radius: 15px;
-  text-decoration: none;
-  transition: transform .3s, background-color .3s;
-}
-.btn-primary:hover { transform: scale(1.05); background-color: var(--smart_blue); }
 
-.btn-contact {
-  padding: .6rem 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(.9rem, 2vw, 1.1rem);
-  color: var(--text_primary);
-  border: 3px solid var(--navegation);
-  border-radius: 15px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  transition: transform .3s, background-color .3s;
-}
-.btn-contact:hover { background-color: var(--navegation); color: white; transform: scale(1.05); }
 .btn-contact i { color: green; }
 
 @media (min-width: 768px) {

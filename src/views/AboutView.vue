@@ -12,8 +12,8 @@
     <main class="about-page">
       <!-- Presentación principal -->
       <section class="presentation" aria-labelledby="presentation-heading">
-        <h2 id="presentation-heading" class="section-title accent">
-          <span>----- </span> Yanetsis Cartas Álvarez <span> -----</span>
+        <h2 id="presentation-heading" class="section-title">
+          Yanetsis Cartas Álvarez
         </h2>
         <div class="presentation-grid">
           <div class="presentation-img diagfirst" v-anim="'slide-right'" role="img" aria-label="Fotografía de Yanetsis"></div>
@@ -34,7 +34,7 @@
 
       <!-- Formación y trayectoria -->
       <section class="timeline-section" aria-labelledby="timeline-heading">
-        <h2 id="timeline-heading" class="section-title accent"><span>----- </span> Formación y Trayectoria <span> -----</span></h2>
+        <h2 id="timeline-heading" class="section-title">Formación y Trayectoria</h2>
         <div class="timeline">
           <article class="timeline-item stagger" v-anim="'slide-right'">
             <div class="timeline-icon" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></div>
@@ -81,7 +81,7 @@
 
       <!-- Metodología -->
       <section class="methodology" aria-labelledby="methodology-heading">
-        <h2 id="methodology-heading" class="section-title accent"><span>----- </span> Mi Metodología <span> -----</span></h2>
+        <h2 id="methodology-heading" class="section-title">Mi Metodología</h2>
         <div class="method-grid">
           <article class="method-card diagfirst" v-anim="'slide-top'">
             <div class="method-icon" aria-hidden="true"><i class="bi bi-person-video3"></i></div>
@@ -113,7 +113,7 @@
           <p>Escríbeme y cuéntame tu programa académico. Juntos diseñaremos una experiencia educativa a medida.</p>
           <div class="cta">
             <RouterLink to="/contacto" class="btn-primary">Contactar ahora</RouterLink>
-            <a href="https://wa.me/640947912" class="btn-contact" aria-label="Enviar mensaje por WhatsApp">
+            <a href="https://wa.me/640947912" class="btn-secondary" aria-label="Enviar mensaje por WhatsApp">
               <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp
             </a>
           </div>
@@ -279,36 +279,7 @@ section { margin-bottom: 5rem; }
 .cta-box h2 { color: white; font-size: clamp(1.3rem, 3vw, 2rem); margin-bottom: 1rem; }
 .cta-box p  { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; }
 
-.btn-primary {
-  padding: .7rem 1.4rem;
-  font-size: clamp(.9rem, 2vw, 1.1rem);
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--atomic);
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform .3s;
-}
 
-.btn-primary:hover { transform: scale(1.05); }
-
-.btn-contact {
-  padding: .6rem 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(.9rem, 2vw, 1.1rem);
-  color: white;
-  border: 2px solid white;
-  border-radius: 15px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  transition: transform .3s, background-color .3s;
-}
-
-.btn-contact:hover { background-color: rgba(255,255,255,0.15); transform: scale(1.05); }
 .btn-contact i { color: #4ade80; }
 
 @media (min-width: 768px) {

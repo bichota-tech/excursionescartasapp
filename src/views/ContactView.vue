@@ -11,9 +11,7 @@
 
     <main class="contact-page">
       <section class="contact-section" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" class="section-title accent">
-          <span>----- </span> ¿Hablamos? <span> -----</span>
-        </h2>
+        <h2 id="contact-heading" class="section-title">¿Hablamos?</h2>
 
         <div class="contact-layout">
 
@@ -187,7 +185,7 @@
               <a href="https://wa.me/640947912" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje de WhatsApp">
                 <i class="bi bi-whatsapp" aria-hidden="true"></i> Escríbenos ahora
               </a>
-              <a href="tel:+34640947912" class="btn-contact" aria-label="Llamar al +34 640 947 912">
+              <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
                 <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
               </a>
             </div>
@@ -328,7 +326,7 @@ section { margin-bottom: 5rem; }
   background-color: var(--navegation);
   color: white;
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -336,7 +334,7 @@ section { margin-bottom: 5rem; }
   transition: transform .3s, background-color .3s;
 }
 
-.btn-submit:hover:not(:disabled) { transform: scale(1.05); background-color: var(--smart_blue); }
+.btn-submit:hover:not(:disabled) { transform: translateY(-2px); background-color: var(--smart_blue); box-shadow: 0 4px 12px rgba(11, 74, 193, 0.2); }
 .btn-submit:disabled { background-color: #4ade80; cursor: default; }
 
 .success-msg {
@@ -369,7 +367,7 @@ section { margin-bottom: 5rem; }
   gap: 1.2rem;
   padding: 1.2rem 1.5rem;
   background: white;
-  box-shadow: 0 4px 16px rgba(0,51,128,0.1);
+  box-shadow: var(--card-shadow);
   transition: transform .3s;
 }
 
@@ -455,38 +453,7 @@ section { margin-bottom: 5rem; }
 
 .closing-content p { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; font-size: clamp(.9rem, 1.8vw, 1.1rem); }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .75rem 1.4rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .95rem;
-  font-weight: 700;
-  background-color: var(--atomic);
-  color: white;
-  border-radius: 15px;
-  text-decoration: none;
-  transition: transform .3s;
-}
 
-.btn-primary:hover { transform: scale(1.05); }
-
-.btn-contact {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  padding: .7rem 1.2rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .95rem;
-  color: white;
-  border: 2px solid white;
-  border-radius: 15px;
-  text-decoration: none;
-  transition: transform .3s, background-color .3s;
-}
-
-.btn-contact:hover { background-color: rgba(255,255,255,0.15); transform: scale(1.05); }
 .btn-contact i { color: rgba(255,255,255,0.8); }
 
 @media (min-width: 768px) {

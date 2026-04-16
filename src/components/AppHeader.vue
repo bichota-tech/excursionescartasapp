@@ -95,11 +95,11 @@ header {
   top: 0;
   z-index: 900;
   width: 100%;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 51, 128, 0.12);
-  box-shadow: 0 2px 12px rgba(0, 51, 128, 0.08);
+  background: var(--glass-bg, rgba(255, 255, 255, 0.95));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 51, 128, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 51, 128, 0.05);
 }
 
 .header-inner {
@@ -206,10 +206,12 @@ header {
   align-items: center;
   gap: .4rem;
   margin-top: 1rem;
-  background: var(--atomic) !important;
-  border-radius: 10px !important;
+  background-color: var(--atomic) !important;
+  color: white !important;
+  border-radius: 12px !important;
   border-left: none !important;
   font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(255, 119, 63, 0.2);
 }
 
 /* Overlay */

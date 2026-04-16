@@ -11,9 +11,7 @@
 
     <main class="blog-page">
       <section aria-labelledby="blog-heading">
-        <h2 id="blog-heading" class="section-title accent">
-          <span>----- </span> Últimos Artículos <span> -----</span>
-        </h2>
+        <h2 id="blog-heading" class="section-title">Últimos Artículos</h2>
 
         <!-- Grid de artículos -->
         <div class="blog-grid" role="list">
@@ -84,7 +82,7 @@ section { margin-bottom: 5rem; }
 .blog-card {
   background: white;
   border-radius: 12px 0;
-  box-shadow: 0 4px 20px rgba(0, 51, 128, 0.12);
+  box-shadow: var(--card-shadow);
   overflow: hidden;
   transition: transform .35s, box-shadow .35s;
   display: flex;
@@ -93,7 +91,7 @@ section { margin-bottom: 5rem; }
 
 .blog-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 51, 128, 0.22);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .card-img-link { display: block; }
