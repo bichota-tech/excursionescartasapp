@@ -96,8 +96,8 @@ header {
   z-index: 900;
   width: 100%;
   background: var(--glass-bg, rgba(255, 255, 255, 0.95));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 51, 128, 0.1);
   box-shadow: 0 4px 16px rgba(0, 51, 128, 0.05);
 }
@@ -121,14 +121,14 @@ header {
 }
 
 .logo img {
-  width: clamp(2.2rem, 6vw, 3.5rem);
+  width: clamp(3rem, 6vw, 3.5rem);
   height: auto;
   object-fit: contain;
 }
 
 .logo span {
   font-family: 'Frank Ruhl Libre', serif;
-  font-size: clamp(.75rem, 2vw, 1rem);
+  font-size: clamp(.9rem, 2vw, 1.2rem);
   line-height: 1.2;
   font-weight: 600;
 }

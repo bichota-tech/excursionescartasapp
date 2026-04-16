@@ -313,6 +313,10 @@ video {
   margin-top: 1rem;
 }
 
+.preview .cta{
+  margin: 0;
+}
+
 .preview h1 {
   font-family: 'Frank Ruhl Libre', serif;
   font-size: clamp(1.5rem, 4vw, 3rem);
@@ -327,16 +331,36 @@ video {
   text-align: center;
 }
 
+a.btn-secondary i{
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
 
 /* ─── Home Section ──────────────────────────────────────── */
-.home-section { margin-top: 2rem; }
+.home-section { 
+  width: 100%;
+  padding-inline: 1rem;
+  margin-top: 2rem; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .homecontainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  width: 100%;
+}
+
+.homecontainer .card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   width: 100%;
 }
 
@@ -353,32 +377,6 @@ video {
   padding: 2rem;
 }
 
-.footer-cta-content {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2.5rem;
-  border-radius: 20px;
-  max-width: 500px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.footer-cta-content h2 {
-  color: white;
-  margin-bottom: 1rem;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  text-align: inherit;
-}
-
-.footer-cta-content p {
-  margin-bottom: 2rem;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  opacity: 0.95;
-}
-
 .circle-exp {
   display: flex;
   flex-direction: column;
@@ -386,8 +384,8 @@ video {
   align-items: center;
   text-align: center;
   position: relative;
-  top: 65%;
-  right: -50%;
+  top: 45%;
+  right: -30%;
   border-radius: 50%;
   border: 2px dashed var(--atomic);
   width: clamp(10rem, 20vw, 13rem);
@@ -427,6 +425,11 @@ video {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding-inline: 1rem;
+}
+
+h2#about-heading {
+  margin-bottom: 1rem;
 }
 
 .aboutcontainer, .clients {
@@ -435,15 +438,19 @@ video {
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 2rem;
+}
+
+.aboutcontainer .cta{
+  margin: 0;
 }
 
 .information {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 1rem;
+  height: auto;
 }
 
 .presentation-img {
@@ -455,20 +462,24 @@ video {
   height: 400px;
   z-index: 2;
   border-radius: 40% 0;
+
 }
 
-.fullname {
+.fullname.diagsecond {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: initial;
   background-color: var(--atomic);
-  padding: 2.5rem;
+  padding: 6rem .8rem 2rem 3rem;
+  position: relative;
+  top:-5rem;
   z-index: 1;
   width: 100%;
+  height: 400px;
   border-radius: 0 40%;
 }
 
-.fullname h3 { color: white; margin-bottom: 1rem; text-align: left; }
+.fullname h3 { color: white; margin-block: 1rem; text-align: left; }
 .fullname p  { color: white; text-align: left; line-height: 1.6; }
 
 .clients .card-list {
@@ -481,22 +492,25 @@ video {
   gap: 1rem;
 }
 
+.info h3{
+  margin-block: 1.5rem;
+}
+
 .clients .card-icon {
   width: 100%;
   min-height: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  padding: 1.2rem;
+  padding: 1.2rem 1.2rem 1.5rem 1rem;
   box-shadow: 4px 3px 9px -1px var(--navegation);
   background-color: transparent;
-  text-align: left;
 }
 
 .clients .card-icon i {
-  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
   color: white;
   margin-bottom: 0;
 }
@@ -512,7 +526,7 @@ video {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   padding: .5rem;
   border-radius: 12%;
@@ -559,17 +573,16 @@ img.slide {
   z-index: 0;
 }
 
+h2#services-heading {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
 .services-section > * {
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .services-section {
-    background-attachment: scroll;
-    padding-block: 3rem;
-  }
-}
 
 .backflayer {
   display: flex;
@@ -589,8 +602,7 @@ img.slide {
   text-align: center;
   width: 100%;
   height: auto;
-  padding: 1.5rem 2rem 2rem 1rem;
-  background-color: rgba(15, 15, 15, 0.2); /* Sutil para no saturar con el nuevo overlay */
+  padding: 1.5rem;
 }
 
 .bungee {
@@ -625,10 +637,10 @@ img.slide {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: .8rem;
   text-align: left;
-  width: 50%;
+  width: 100%;
 }
 
 .actinfo .info p { color: white; font-weight: 600; }
@@ -641,18 +653,17 @@ img.slide {
   width: 1.5rem;
   height: 1.5rem;
   padding: .3rem;
-  flex-shrink: 0;
+  
 }
 
 .plane {
   position: absolute;
   top: 8%;
-  right: 25%;
+  right: 0;
   transform: translateY(-50%);
-  width: 80%;
+  width: 100%;
+  z-index: -1;
 }
-
-#plane { width: 100%; height: auto; }
 
 .whyus {
   display: flex;
@@ -672,7 +683,38 @@ img.slide {
   margin-bottom: 2rem;
 }
 
-.explain h3 { margin-bottom: 1.5rem; }
+.explain h3 { margin-bottom: 1.5rem; color: white; }
+
+/* ─── Footer CTA Content ────────────────────────────────── */
+.footer-cta-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.footer-cta-content .cta{
+  margin-bottom: 0;
+}
+
+.footer-cta-content h2 {
+  color: var(--navegation);
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  text-align: inherit;
+}
+
+.footer-cta-content p {
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  opacity: 0.95;
+}
 
 /* ─── Accessibility sr-only ─────────────────────────────── */
 .sr-only {

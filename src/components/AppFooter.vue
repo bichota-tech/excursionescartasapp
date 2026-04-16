@@ -59,7 +59,7 @@ const year = new Date().getFullYear()
 <style scoped>
 footer {
   width: 100%;
-  margin-top: 4rem;
+  
   background-color: var(--smart_blue);
 }
 
