@@ -106,48 +106,48 @@
 
       <!-- Clientes / Targets -->
       <div class="clients">
-        <div class="info">
           <h3>¿A quiénes va dirigido?</h3>
-          <div class="card-list stagger" role="list">
-            <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-              <span>Facultades de Historia del Arte.</span>
-            </article>
-            <article class="card-icon diagsecond" v-anim="'slide-right'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-              <span>Programas de Museología.</span>
-            </article>
-            <article class="card-icon diagsecond" v-anim="'slide-left'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-              <span>Estudios de Patrimonio.</span>
-            </article>
-            <article class="card-icon diagfirst" v-anim="'slide-bottom'" role="listitem">
-              <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-              <span>Minors, masters y viajes de estudio.</span>
-            </article>
+          <div class="info">
+            <div class="card-list stagger" role="list">
+              <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
+                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+                <span>Facultades de Historia del Arte.</span>
+              </article>
+              <article class="card-icon diagsecond" v-anim="'slide-right'" role="listitem">
+                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+                <span>Programas de Museología.</span>
+              </article>
+              <article class="card-icon diagsecond" v-anim="'slide-left'" role="listitem">
+                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+                <span>Estudios de Patrimonio.</span>
+              </article>
+              <article class="card-icon diagfirst" v-anim="'slide-bottom'" role="listitem">
+                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+                <span>Minors, masters y viajes de estudio.</span>
+              </article>
+            </div>
+            
+            <div class="img-right-grid stagger" v-anim="'draw-border'">
+              <div class="right-grid imgtop" v-anim="'slide-right'">
+                <img src="/img/students_museum.png" class="slide" alt="Grupo de estudiantes visitando un museo holandés" />
+              </div>
+              <div class="right-grid imgbottom" v-anim="'slide-right'">
+                <img src="/img/students_canal.png" class="slide" alt="Estudiantes en los canales de Utrecht" />
+              </div>
+              <div class="right-grid imgbottom" v-anim="'slide-left'">
+                <img src="/img/students_streets.png" class="slide" alt="Estudiantes explorando las calles medievales de Utrecht" />
+              </div>
+              <div class="right-grid imgtop" v-anim="'slide-left'">
+                <img src="/img/hero_home.png" class="slide" alt="Estudiantes con guía en los canales de los Países Bajos" />
+              </div>
+            </div>
           </div>
-          <div class="cta">
-            <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
-            <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
-              <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
-            </a>
-          </div>
-        </div>
-
-        <div class="img-right-grid stagger" v-anim="'draw-border'">
-          <div class="right-grid imgtop" v-anim="'slide-right'">
-            <img src="/img/students_museum.png" class="slide" alt="Grupo de estudiantes visitando un museo holandés" />
-          </div>
-          <div class="right-grid imgbottom" v-anim="'slide-right'">
-            <img src="/img/students_canal.png" class="slide" alt="Estudiantes en los canales de Utrecht" />
-          </div>
-          <div class="right-grid imgbottom" v-anim="'slide-left'">
-            <img src="/img/students_streets.png" class="slide" alt="Estudiantes explorando las calles medievales de Utrecht" />
-          </div>
-          <div class="right-grid imgtop" v-anim="'slide-left'">
-            <img src="/img/hero_home.png" class="slide" alt="Estudiantes con guía en los canales de los Países Bajos" />
-          </div>
-        </div>
+      </div>
+      <div class="cta">
+        <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
+        <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
+          <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
+        </a>
       </div>
     </section>
 
@@ -220,14 +220,14 @@
                 <p>Sesiones virtuales previas para introducir al alumno a la excursión.</p>
               </article>
             </div>
-            <div class="cta">
-              <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
-              <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
-                <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
-              </a>
-            </div>
           </div>
         </div>
+      </div>
+      <div class="cta">
+        <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
+        <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
+          <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
+        </a>
       </div>
       <!-- CTA Final con imagen de fondo -->
     </section>
@@ -731,118 +731,182 @@ h2#services-heading {
 
 /* ─── Desktop ────────────────────────────────────────────── */
 @media (min-width: 768px) {
+
   video {
     height: clamp(500px, 80vh, 700px);
-    object-fit: cover;
   }
 
   .header-content {
     height: clamp(500px, 80vh, 700px);
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 2.5rem;
     margin-bottom: 2rem;
   }
 
-  #menu-icon { top: 18%; right: 18%; z-index: 1; }
+  #menu-icon { top: 25%; right: 10%; z-index: 1; }
 
   .preview {
-    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
     gap: 1.5rem;
     padding: 2rem;
+    margin-top: 0;
   }
 
   .preview p { width: 80%; }
-
+  .preview .cta{
+    margin: 0;
+  }
+  
   .homecontainer {
+    display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: initial;
+    width: 100%;
+    gap: 1rem;
   }
 
   .homecontainer .card-list {
-    margin-inline: 0;
     width: 50%;
-    display: flex;
-    flex-direction: column;
   }
 
   .homecontainer .card-list .card-icon {
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
     border-radius: 20px;
-    gap: .8rem;
+    gap: .5rem;
+    padding: 1rem .8rem 1.5rem 1.8rem;
+    text-align: center;
   }
 
-  .img-right { width: 100%; height: 80vh; }
+   .homecontainer .card-list .card-icon i{
+    margin: 0;
+   }
+
+  .img-right { width: 50%; height: 80vh; }
   
-  .footer-cta {
-    justify-content: flex-end;
-    padding-right: 5%;
-  }
-
-  .footer-cta-content {
-    text-align: left;
-    max-width: 500px;
-  }
-
-  .circle-exp { right: -60%; top: 63%; }
-
+  
+  .circle-exp { right: -30%; top: 50%; }
+  
   .information {
     flex-direction: row;
     align-items: stretch;
-    gap: 2rem;
+    gap: 1rem;
+  }
+  
+  .information { width: 100%; height: auto; margin-bottom: 3rem;}
+
+  .presentation-img { width: 50%; height: auto; }
+
+  .information .fullname  { 
+    width: 50%; 
+    margin: 0; 
+    padding: 3rem; 
+    position: none; 
+    top:0; 
+    z-index: 1; 
+    padding: 1rem 1rem 1.5rem 3rem;
+    justify-content: center;
+  }
+  
+  .clients {
+    gap: 1rem; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
   }
 
-  .information .presentation-img { width: 50%; height: auto; }
-  .information .fullname  { width: 50%; margin: 0; padding: 3rem; }
-
-  .clients { padding-inline: 1rem; gap: 4rem; flex-direction: row; }
-
+  .clients .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: initial;
+    gap: 1rem;
+    width: 100%;
+  }
+  
   .clients .card-list {
-    margin-block: 4rem;
+    margin-block: 0;
     width: 100%;
     min-width: 40%;
   }
 
+  .img-right-grid{
+    justify-content: center;
+    align-items: center;
+  }
+  
   .clients .card-list .card-icon {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
   }
-
+  
   .clients .card-list .card-icon span { text-align: center; }
-
+  
   .servcontent {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 1rem;
     width: 100%;
   }
-
-  .servcontent .backflayer, .activity {
-    width: 40%;
-    min-height: 90vh;
+  
+  .servcontent .backflayer {
+    width: 45%;
+    min-height: 70vh;
   }
 
-  .whyus { width: 50%; }
-
+  .activity{
+    width: 45%;
+    min-height: 70vh;
+    padding: 0 !important;
+  }
+  
+  .whyus { width: 55%; }
+  
+  .activity .actinfo {
+    width: 100%;
+    margin: 0 auto;
+    gap: 1.5rem;
+    padding: 1.2rem;
+  }
+  
+  
   .plane { top: 10%; right: 50%; width: 50%; }
-
+  
   .explain .card-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-
+  
   .explain .card-list .card-icon {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+  }
+  
+  .footer-cta {
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 5%;
+  }
+  
+  .footer-cta-content {
+    text-align: left;
+    max-width: 500px;
   }
 }
 </style>
