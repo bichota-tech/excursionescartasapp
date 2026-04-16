@@ -1,0 +1,18 @@
+:root {
+  --cta_accent: #962d32;
+  --ligth_bgd: white;
+  --navegation: #003380;
+  --shadow: #0f0f0f9a;
+  --text_primary: #212121;
+  --text_secondary: #757575;
+  --smart_blue: #0b4ac1;
+  --atomic: #FF773F;
+
+  /* Animaciones */
+  --slide-speed: 0.9s;
+  --stamp-speed: 0.9s;
+  --slide-ease: ease-out;
+  --slide-opacity: 0;
+  --stagger-step: 0.15s;
+  --border-speed: 2s;
+}

@@ -1,0 +1,200 @@
+/* =============================================
+   TIPOGRAFÍA GLOBAL
+   ============================================= */
+h1, h2, h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+}
+
+h2 {
+  font-size: clamp(.8rem, 2vw, 1.2rem);
+  color: var(--navegation);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--navegation);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.9rem, 2vw, 1.1rem);
+}
+
+/* =============================================
+   SECTION / LAYOUT
+   ============================================= */
+main {
+  padding-inline: 1rem;
+}
+
+section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-inline: 2.5rem;
+  }
+  section {
+    padding-inline: 3rem;
+  }
+}
+
+/* =============================================
+   FORMAS DECORATIVAS & UTILIDADES
+   ============================================= */
+.diagfirst {
+  border-radius: 50% 0 !important;
+}
+
+.diagsecond {
+  border-radius: 0 50% !important;
+}
+
+.imgtop {
+  border-radius: 30% 0 !important;
+}
+
+.imgbottom {
+  border-radius: 0 30% !important;
+}
+
+/* =============================================
+   CTA & BOTONES
+   ============================================= */
+.cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+  flex-wrap: wrap;
+  margin-block: 1.5rem;
+  width: 100%;
+}
+
+.cta button,
+.cta .btn-primary {
+  padding: .7rem 1.2rem;
+  font-size: clamp(.9rem, 2vw, 1.2rem);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--navegation);
+  color: var(--ligth_bgd);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform ease-in-out .3s, background-color .3s;
+}
+
+.cta button:hover,
+.cta .btn-primary:hover {
+  transform: scale(1.05);
+  background-color: var(--smart_blue);
+}
+
+.cta a.btn-contact,
+.cta a#btn-contact {
+  color: var(--text_primary);
+  cursor: pointer;
+  border: 3px solid var(--navegation);
+  border-radius: 15px;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.9rem, 2vw, 1.2rem);
+  transition: transform ease-in-out .3s, background-color .3s;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.cta a.btn-contact:hover,
+.cta a#btn-contact:hover {
+  background-color: var(--navegation);
+  color: var(--ligth_bgd);
+  transform: scale(1.05);
+}
+
+.cta a.btn-contact i,
+.cta a#btn-contact i {
+  color: green;
+}
+
+/* =============================================
+   CARDS & GRIDS
+   ============================================= */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card-list .card-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background-color: var(--navegation);
+  padding: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-icon i {
+  font-size: clamp(1.6rem, 3vw, 1.8rem);
+  margin-bottom: .8rem;
+  color: var(--ligth_bgd);
+}
+
+.card-icon span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.9rem, 2vw, 1.2rem);
+  color: var(--ligth_bgd);
+  line-height: 1.5;
+  display: block;
+}
+
+/* =============================================
+   FOOTER (WHATSAPP FLOAT)
+   ============================================= */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  left: 10px;
+  background-color: rgba(0, 128, 0, 0.685);
+  color: var(--ligth_bgd);
+  border-radius: 50%;
+  text-align: center;
+  font-size: clamp(2.3rem, 5vh, 3.5rem);
+  box-shadow: 2px 2px 3px var(--shadow);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: darkgreen;
+}
