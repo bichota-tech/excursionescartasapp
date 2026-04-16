@@ -230,17 +230,17 @@
         </div>
       </div>
       <!-- CTA Final con imagen de fondo -->
-      <div class="img-right footer-cta" role="region" aria-label="Llamada a la acción final">
-        <div class="footer-cta-content" v-anim="'slide-left'">
-          <h2>¿Listo para tu próxima aventura académica?</h2>
-          <p>Únete a cientos de estudiantes que ya han descubierto los Países Bajos con nuestras rutas personalizadas.</p>
-          <div class="cta">
-            <RouterLink to="/contacto" class="btn-primary">Reservar ahora</RouterLink>
-            <RouterLink to="/servicios" class="btn-secondary">Explorar más</RouterLink>
-          </div>
+    </section>
+    <div class="img-right footer-cta" role="region" aria-label="Llamada a la acción final">
+      <div class="footer-cta-content" v-anim="'slide-left'">
+        <h2>¿Listo para tu próxima aventura académica?</h2>
+        <p>Únete a cientos de estudiantes que ya han descubierto los Países Bajos con nuestras rutas personalizadas.</p>
+        <div class="cta">
+          <RouterLink to="/contacto" class="btn-primary">Reservar ahora</RouterLink>
+          <RouterLink to="/servicios" class="btn-secondary">Explorar más</RouterLink>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -351,7 +351,6 @@ video {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  margin-top: 4rem;
 }
 
 .footer-cta-content {
@@ -541,8 +540,35 @@ img.slide {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   position: relative;
+  background-image: url('/img/utrecht_aerial.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Parallax en la sección padre */
+  padding-block: 5rem;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* Overlay para legibilidad global */
+  z-index: 0;
+}
+
+.services-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    background-attachment: scroll;
+    padding-block: 3rem;
+  }
 }
 
 .backflayer {
@@ -550,14 +576,9 @@ img.slide {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('./img/utrecht_aerial.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
-  filter: drop-shadow(10px 10px 5px #0f0f0f5b);
 }
 
 .activity.imgtop {
@@ -569,7 +590,7 @@ img.slide {
   width: 100%;
   height: auto;
   padding: 1.5rem 2rem 2rem 1rem;
-  background-color: rgba(15, 15, 15, 0.37);
+  background-color: rgba(15, 15, 15, 0.2); /* Sutil para no saturar con el nuevo overlay */
 }
 
 .bungee {
@@ -595,8 +616,9 @@ img.slide {
   justify-content: center;
   align-items: center;
   gap: .8rem;
-  background-color: #0f0f0f70;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  backdrop-filter: blur(4px);
 }
 
 .actinfo .info {
