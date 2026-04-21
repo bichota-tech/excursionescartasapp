@@ -791,19 +791,17 @@ h2#services-heading {
     align-items: initial;
     width: 100%;
     gap: 1rem;
-    padding-inline: 3rem;
   }
 
   .homecontainer .card-list {
-    width: 45%;
+    width: 50%;
   }
 
   .homecontainer .card-list .card-icon {
     flex-direction: column;
     text-align: left;
     border-radius: 20px;
-    gap: .5rem;
-    padding: 1rem .8rem 1.5rem 1.8rem;
+    gap: .3rem;
     text-align: center;
   }
 
@@ -811,16 +809,15 @@ h2#services-heading {
     margin: 0;
    }
 
-  .img-right { width: 45%; height: 80vh; }
+  .img-right { width: 50%; height: 52vh; }
   
   .circle-exp { right: -30%; top: 50%; }
-  
-  section#about { padding-inline: 3rem; }
 
   .information {
     flex-direction: row;
     align-items: stretch;
-    gap: 2rem;
+    gap: 1rem;
+    margin-bottom: 4rem;
   }
   
   .presentation-img { width: 50%; height: auto; }
@@ -836,38 +833,36 @@ h2#services-heading {
     justify-content: center;
   }
   
-  .clients {
+  .clients-section {
     gap: 1rem; 
     justify-content: center;
     align-items: center;
     flex-direction: column; 
   }
 
-  .clients .info {
+  .clients-section .info {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: initial;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
   }
   
-  .clients .card-list {
+  .clients-section .card-list {
     margin-block: 0;
     width: 100%;
-    min-width: 40%;
   }
 
-  .img-right-grid{
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .clients .card-list .card-icon {
+  .clients-section .card-list .card-icon {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
+  }
+
+  .img-right-grid{
+    margin: 0;
   }
   
   .clients .card-list .card-icon span { text-align: center; }
@@ -877,31 +872,19 @@ h2#services-heading {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
-    padding: 0 2rem;
   }
   
   .servcontent .backflayer {
-    width: 45%;
+    width: 50%;
     min-height: 70vh;
   }
 
-  .activity{
-    width: 45%;
-    min-height: 70vh;
-    padding: 0 !important;
+  .actinfo{
+    width: 100%;
   }
   
-  .whyus { width: 55%; }
-  
-  .activity .actinfo {
-    width: 90%;
-    margin: 0 auto;
-    gap: 1.5rem;
-    padding: 2rem 1.5rem;
-  }
-
   .actinfo .info{
     display: flex;
     flex-direction: row;
@@ -911,20 +894,22 @@ h2#services-heading {
     
   }
   
+  .whyus-explain { width: 55%; }
   
   .plane { top: 10%; right: 50%; width: 50%; }
   
-  .explain .card-list {
+  .whyus-explain .card-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: .5rem;
   }
   
-  .explain .card-list .card-icon {
+  .whyus-explain .card-list .card-icon {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    padding: .5rem 1.2rem .8rem 1.5rem;
   }
   
   .footer-cta {
