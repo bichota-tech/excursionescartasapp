@@ -68,13 +68,13 @@ section {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
-  padding: 1rem;
+  
 }
 
 @media (min-width: 768px) {
 
   section {
-    padding-inline: 1rem;
+    padding-inline: 3rem;
     margin-bottom: 3rem;
   }
 }
@@ -84,13 +84,14 @@ section {
    ============================================= */
 .page-hero {
   width: 100%;
-  height: clamp(14rem, 35vw, 22rem);
+  height: clamp(18rem, 35vw, 22rem);
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   padding: 2.5rem;
+  border-radius: 0 0 12px 12px;
 }
 
 .page-hero img {
@@ -143,7 +144,7 @@ section {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-block: 1.5rem;
+  margin-block: 2rem;
   width: 100%;
 }
 
@@ -230,7 +231,7 @@ section {
   align-items: center;
   text-align: center;
   background-color: var(--navegation);
-  padding: 2rem;
+  padding: 1rem;
   overflow: hidden;
   width: 100%;
   height: 100%;

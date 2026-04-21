@@ -68,7 +68,7 @@ const blogStore = useBlogStore()
 
 <style scoped>
 .blog-page { padding-inline: 1rem; }
-section { margin-bottom: 5rem; }
+section { margin-bottom: 3rem; }
 
 .blog-grid {
   display: grid;

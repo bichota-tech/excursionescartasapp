@@ -80,7 +80,7 @@
 
     <!-- About Section Preview -->
     <section class="about-section" aria-label="about-heading">
-      <h2 id="title-about">
+      <h2 id="title-about" class="section-title">
         Excursiones Cartas
       </h2>
       <div class="aboutcontainer">
@@ -154,7 +154,7 @@
 
     <!-- Services Preview -->
     <section class="services-section" aria-labelledby="services-heading">
-      <h2 id="services-heading">Nuestros Servicios</h2>
+      <h2 id="services-heading" class="section-title">Nuestros Servicios</h2>
       <div class="servcontent">
         <div class="backflayer imgtop" aria-hidden="true">
           <h3 class="bungee text-white">VIAJA A</h3>
@@ -244,9 +244,6 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
-i.bi{
-  font-size: 1.6rem;
-}
 
 /* ─── Hero ─────────────────────────────────────────────── */
 .hero-section {
@@ -281,7 +278,7 @@ video {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -330,12 +327,11 @@ a.btn-secondary i{
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-
 /* ─── Home Section ──────────────────────────────────────── */
+
 .home-section { 
   width: 100%;
   padding-inline: 1rem;
-  margin-top: 2rem; 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -355,7 +351,7 @@ a.btn-secondary i{
 .homecontainer .card-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: .5rem;
   width: 100%;
 }
 
@@ -419,24 +415,19 @@ a.btn-secondary i{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   padding-inline: 1rem;
 }
 
-h2#about-heading {
-  margin-bottom: 1rem;
+.about-section h2 {
+  margin-top: 2rem;
 }
 
-.aboutcontainer, .clients {
+.aboutcontainer{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.aboutcontainer .cta{
-  margin: 0;
 }
 
 .information {
@@ -477,21 +468,34 @@ h2#about-heading {
 .fullname h3 { color: white; margin-block: 1rem; text-align: left; }
 .fullname p  { color: white; text-align: left; line-height: 1.6; }
 
-.clients .card-list {
+.aboutcontainer .cta{
+  margin-top: -2rem;
+}
+
+.clients-section{
   width: 100%;
   height: auto;
   margin-bottom: 2rem;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
-.info h3{
-  margin-block: 1.5rem;
+.clients-section .card-list {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
+  margin-bottom: 2rem;
 }
 
-.clients .card-icon {
+
+.clients-section .card-icon {
   width: 100%;
   min-height: 2rem;
   display: flex;
@@ -499,18 +503,17 @@ h2#about-heading {
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  padding: 1.2rem 1.2rem 1.5rem 1rem;
   box-shadow: 4px 3px 9px -1px var(--navegation);
   background-color: transparent;
 }
 
-.clients .card-icon i {
+.clients-section .card-icon i {
   font-size: clamp(1.6rem, 2vw, 1.8rem);
   color: white;
   margin-bottom: 0;
 }
 
-.clients .card-icon span {
+.clients-section .card-icon span {
   color: var(--text_primary);
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1rem, 2vw, 1.3rem);
@@ -520,12 +523,12 @@ h2#about-heading {
 .img-right-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: .5rem;
   width: 100%;
-  margin: 0 auto;
   padding: .5rem;
-  border-radius: 12%;
+  border-radius: 15%;
   color: var(--atomic);
+  margin-bottom: 1rem;
 }
 
 .right-grid {
@@ -555,9 +558,15 @@ img.slide {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; /* Parallax en la sección padre */
-  padding-block: 5rem;
-  width: 100%;
+  padding-block: 4rem;
+  padding-inline: 1rem;
   margin-bottom: 0;
+  width: 100%;
+}
+
+.services-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .services-section::before {
@@ -572,12 +581,6 @@ h2#services-heading {
   color: white;
   margin-bottom: 1.5rem;
 }
-
-.services-section > * {
-  position: relative;
-  z-index: 1;
-}
-
 
 .backflayer {
   display: flex;
@@ -606,18 +609,25 @@ h2#services-heading {
   margin-bottom: 0;
 }
 
-.text-white { color: white !important; }
+.backflayer h4 { 
+  color: white; 
+  margin-block: 1rem; 
+  width: 100%; 
+  text-align: center; 
+}
+
+.text-white { 
+  color: white !important; 
+}
 
 .svg-text {
   font-family: 'Bungee', cursive;
   font-size: 5rem;
 }
 
-.activity h4 { color: white; margin-block: 1rem; width: 100%; text-align: center; }
-
 .actinfo {
   width: 95%;
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -625,7 +635,7 @@ h2#services-heading {
   gap: .8rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(12px);
 }
 
 .actinfo .info {
@@ -660,7 +670,12 @@ h2#services-heading {
   z-index: -1;
 }
 
-.whyus {
+.whyus-explain h3 { 
+  margin-bottom: 1.5rem; 
+  color: white; 
+}
+
+.whyus-explain {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -669,24 +684,33 @@ h2#services-heading {
   width: 100%;
 }
 
-.explain {
+.servcontent .card-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* ─── Footer CTA Content ────────────────────────────────── */
+
+.footer-cta {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  padding: 3rem;
 }
 
-.explain h3 { margin-bottom: 1.5rem; color: white; }
-
-/* ─── Footer CTA Content ────────────────────────────────── */
 .footer-cta-content {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 20px;
   max-width: 500px;
   text-align: center;

@@ -128,8 +128,10 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
+
 .about-page { padding-inline: 1rem; }
-section { margin-bottom: 5rem; }
+
+section { margin-bottom: 3rem; }
 
 /* Presentation */
 .presentation-grid {
@@ -148,6 +150,7 @@ section { margin-bottom: 5rem; }
   max-height: 420px;
   flex-shrink: 0;
 }
+
 
 .presentation-text {
   display: flex;

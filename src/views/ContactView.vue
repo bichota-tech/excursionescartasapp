@@ -237,7 +237,7 @@ const handleSubmit = () => {
 
 <style scoped>
 .contact-page { padding-inline: 1rem; }
-section { margin-bottom: 5rem; }
+section { margin-bottom: 3rem; }
 
 .contact-layout {
   display: flex;

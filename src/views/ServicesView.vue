@@ -193,7 +193,7 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .services-page { padding-inline: 1rem; }
-section { margin-bottom: 5rem; }
+section { margin-bottom: 3rem; }
 
 /* Services grid */
 .services-grid {
