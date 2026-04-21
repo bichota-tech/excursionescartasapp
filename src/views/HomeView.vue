@@ -40,7 +40,7 @@
     </section>
 
     <!-- Cards de características -->
-    <section class="home-section" id="home" aria-labelledby="home-heading">
+    <section class="home-section" aria-labelledby="home-heading">
       <div class="homecontainer">
         <div class="card-list stagger" role="list">
           <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
@@ -79,8 +79,8 @@
     </section>
 
     <!-- About Section Preview -->
-    <section class="about-section" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="section-title">
+    <section class="about-section" aria-label="about-heading">
+      <h2 id="title-about">
         Excursiones Cartas
       </h2>
       <div class="aboutcontainer">
@@ -96,6 +96,7 @@
             </p>
           </div>
         </div>
+
         <div class="cta">
           <RouterLink to="/sobre-mi" class="btn-primary">Conoce más sobre mí</RouterLink>
           <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
@@ -103,90 +104,86 @@
           </a>
         </div>
       </div>
-
+    </section>
       <!-- Clientes / Targets -->
-      <div class="clients">
-          <h3>¿A quiénes va dirigido?</h3>
-          <div class="info">
-            <div class="card-list stagger" role="list">
-              <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-                <span>Facultades de Historia del Arte.</span>
-              </article>
-              <article class="card-icon diagsecond" v-anim="'slide-right'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-                <span>Programas de Museología.</span>
-              </article>
-              <article class="card-icon diagsecond" v-anim="'slide-left'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-                <span>Estudios de Patrimonio.</span>
-              </article>
-              <article class="card-icon diagfirst" v-anim="'slide-bottom'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
-                <span>Minors, masters y viajes de estudio.</span>
-              </article>
-            </div>
-            
-            <div class="img-right-grid stagger" v-anim="'draw-border'">
-              <div class="right-grid imgtop" v-anim="'slide-right'">
-                <img src="/img/students_museum.png" class="slide" alt="Grupo de estudiantes visitando un museo holandés" />
-              </div>
-              <div class="right-grid imgbottom" v-anim="'slide-right'">
-                <img src="/img/students_canal.png" class="slide" alt="Estudiantes en los canales de Utrecht" />
-              </div>
-              <div class="right-grid imgbottom" v-anim="'slide-left'">
-                <img src="/img/students_streets.png" class="slide" alt="Estudiantes explorando las calles medievales de Utrecht" />
-              </div>
-              <div class="right-grid imgtop" v-anim="'slide-left'">
-                <img src="/img/hero_home.png" class="slide" alt="Estudiantes con guía en los canales de los Países Bajos" />
-              </div>
+    <section class="clients-section" aria-labelledby="clients-heading">
+      <h3 id="clients-heading">¿A quiénes va dirigido?</h3>
+      <div class="info">
+        <div class="card-list stagger" role="list">
+          <article class="card-icon diagfirst" v-anim="'slide-top'" role="listitem">
+            <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+            <span>Facultades de Historia del Arte.</span>
+          </article>
+          <article class="card-icon diagsecond" v-anim="'slide-right'" role="listitem">
+            <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+            <span>Programas de Museología.</span>
+          </article>
+          <article class="card-icon diagsecond" v-anim="'slide-left'" role="listitem">
+            <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+            <span>Estudios de Patrimonio.</span>
+          </article>
+          <article class="card-icon diagfirst" v-anim="'slide-bottom'" role="listitem">
+            <i class="bi bi-bookmark-check-fill" style="color: var(--navegation);" aria-hidden="true"></i>
+            <span>Minors, masters y viajes de estudio.</span>
+          </article>
+        </div>
+          
+        <div class="img-right-grid stagger" v-anim="'draw-border'">
+          <div class="right-grid imgtop" v-anim="'slide-right'">
+            <img src="/img/students_museum.png" class="slide" alt="Grupo de estudiantes visitando un museo holandés" />
+          </div>
+          <div class="right-grid imgbottom" v-anim="'slide-right'">
+            <img src="/img/students_canal.png" class="slide" alt="Estudiantes en los canales de Utrecht" />
+          </div>
+          <div class="right-grid imgbottom" v-anim="'slide-left'">
+            <img src="/img/students_streets.png" class="slide" alt="Estudiantes explorando las calles medievales de Utrecht" />
+          </div>
+            <div class="right-grid imgtop" v-anim="'slide-left'">
+              <img src="/img/hero_home.png" class="slide" alt="Estudiantes con guía en los canales de los Países Bajos" />
             </div>
           </div>
-      </div>
-      <div class="cta">
-        <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
-        <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
-          <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
-        </a>
-      </div>
+        </div>
+    
+        <div class="cta">
+          <RouterLink to="/servicios" class="btn-primary">Ver Ofertas</RouterLink>
+          <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
+            <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
+          </a>
+        </div>
     </section>
 
     <!-- Services Preview -->
-    <section class="services-section" id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading" class="section-title">
-        Nuestros Servicios
-      </h2>
+    <section class="services-section" aria-labelledby="services-heading">
+      <h2 id="services-heading">Nuestros Servicios</h2>
       <div class="servcontent">
         <div class="backflayer imgtop" aria-hidden="true">
-          <div class="activity imgtop">
-            <h3 class="bungee text-white">VIAJA A</h3>
-            <svg viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" aria-label="PAÍSES BAJOS" role="img">
-              <text x="180" y="130" class="svg-text" fill="transparent" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">
-                PAÍSES BAJOS
-              </text>
-            </svg>
-            <h4>¿Qué incluye la excursión?</h4>
-            <div class="actinfo">
-              <div class="info">
-                <i class="bi bi-sign-turn-right" id="ico" aria-hidden="true"></i>
-                <p>Diseño de rutas planificadas según el currículo.</p>
-              </div>
-              <div class="info">
-                <i class="bi bi-mortarboard" id="ico" aria-hidden="true"></i>
-                <p>Contenido académico adaptado al nivel universitario.</p>
-              </div>
-              <div class="info">
-                <i class="bi bi-person-video3" id="ico" aria-hidden="true"></i>
-                <p>Introducciones virtuales previas a la excursión.</p>
-              </div>
-              <div class="info">
-                <i class="bi bi-buildings" id="ico" aria-hidden="true"></i>
-                <p>Visitas a museos, instituciones culturales y espacios patrimoniales.</p>
-              </div>
-              <div class="info">
-                <i class="bi bi-activity" id="ico" aria-hidden="true"></i>
-                <p>Actividades participativas y análisis in situ.</p>
-              </div>
+          <h3 class="bungee text-white">VIAJA A</h3>
+          <svg viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" aria-label="PAÍSES BAJOS" role="img">
+            <text x="180" y="130" class="svg-text" fill="transparent" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">
+              PAÍSES BAJOS
+            </text>
+          </svg>
+          <h4>¿Qué incluye la excursión?</h4>
+          <div class="actinfo">
+            <div class="info">
+              <i class="bi bi-sign-turn-right" id="ico" aria-hidden="true"></i>
+              <p>Diseño de rutas planificadas según el currículo.</p>
+            </div>
+            <div class="info">
+              <i class="bi bi-mortarboard" id="ico" aria-hidden="true"></i>
+              <p>Contenido académico adaptado al nivel universitario.</p>
+            </div>
+            <div class="info">
+              <i class="bi bi-person-video3" id="ico" aria-hidden="true"></i>
+              <p>Introducciones virtuales previas a la excursión.</p>
+            </div>
+            <div class="info">
+              <i class="bi bi-buildings" id="ico" aria-hidden="true"></i>
+              <p>Visitas a museos, instituciones culturales y espacios patrimoniales.</p>
+            </div>
+            <div class="info">
+              <i class="bi bi-activity" id="ico" aria-hidden="true"></i>
+              <p>Actividades participativas y análisis in situ.</p>
             </div>
           </div>
         </div>
@@ -195,31 +192,29 @@
           <img src="/img/plane.png" id="plane" alt="" aria-hidden="true" />
         </div>
 
-        <div class="whyus">
-          <div class="explain">
-            <h3>¿Por qué elegir nuestros servicios?</h3>
-            <div class="card-list stagger" role="list">
-              <article class="card-icon diagfirst" v-anim="'slide-left'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
-                <h4>Excursiones Personalizadas</h4>
-                <p>Diseño de rutas adaptadas al contenido del programa académico.</p>
-              </article>
-              <article class="card-icon diagsecond" v-anim="'slide-top'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
-                <h4>Adaptadas al alumno</h4>
-                <p>Excursiones diseñadas en función del nivel del estudiante.</p>
-              </article>
-              <article class="card-icon diagsecond" v-anim="'slide-bottom'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
-                <h4>Material Didáctico</h4>
-                <p>Material complementario que vincula la excursión con los objetivos académicos.</p>
-              </article>
-              <article class="card-icon diagfirst" v-anim="'slide-right'" role="listitem">
-                <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
-                <h4>Formato Flexible</h4>
-                <p>Sesiones virtuales previas para introducir al alumno a la excursión.</p>
-              </article>
-            </div>
+        <div class="whyus-explain">
+          <h3>¿Por qué elegir nuestros servicios?</h3>
+          <div class="card-list stagger" role="list">
+            <article class="card-icon diagfirst" v-anim="'slide-left'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+              <h4>Excursiones Personalizadas</h4>
+              <p>Diseño de rutas adaptadas al contenido del programa académico.</p>
+            </article>
+            <article class="card-icon diagsecond" v-anim="'slide-top'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+              <h4>Adaptadas al alumno</h4>
+              <p>Excursiones diseñadas en función del nivel del estudiante.</p>
+            </article>
+            <article class="card-icon diagsecond" v-anim="'slide-bottom'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+              <h4>Material Didáctico</h4>
+              <p>Material complementario que vincula la excursión con los objetivos académicos.</p>
+            </article>
+            <article class="card-icon diagfirst" v-anim="'slide-right'" role="listitem">
+              <i class="bi bi-bookmark-check-fill" aria-hidden="true"></i>
+              <h4>Formato Flexible</h4>
+              <p>Sesiones virtuales previas para introducir al alumno a la excursión.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -229,8 +224,8 @@
           <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
         </a>
       </div>
-      <!-- CTA Final con imagen de fondo -->
     </section>
+    <!-- CTA Final con imagen de fondo -->
     <div class="img-right footer-cta" role="region" aria-label="Llamada a la acción final">
       <div class="footer-cta-content" v-anim="'slide-left'">
         <h2>¿Listo para tu próxima aventura académica?</h2>
@@ -772,10 +767,11 @@ h2#services-heading {
     align-items: initial;
     width: 100%;
     gap: 1rem;
+    padding-inline: 3rem;
   }
 
   .homecontainer .card-list {
-    width: 50%;
+    width: 45%;
   }
 
   .homecontainer .card-list .card-icon {
@@ -791,19 +787,18 @@ h2#services-heading {
     margin: 0;
    }
 
-  .img-right { width: 50%; height: 80vh; }
-  
+  .img-right { width: 45%; height: 80vh; }
   
   .circle-exp { right: -30%; top: 50%; }
   
+  section#about { padding-inline: 3rem; }
+
   .information {
     flex-direction: row;
     align-items: stretch;
-    gap: 1rem;
+    gap: 2rem;
   }
   
-  .information { width: 100%; height: auto; margin-bottom: 3rem;}
-
   .presentation-img { width: 50%; height: auto; }
 
   .information .fullname  { 
@@ -829,7 +824,7 @@ h2#services-heading {
     flex-direction: row;
     justify-content: center;
     align-items: initial;
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
   }
   
@@ -858,8 +853,9 @@ h2#services-heading {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
+    padding: 0 2rem;
   }
   
   .servcontent .backflayer {
@@ -876,10 +872,19 @@ h2#services-heading {
   .whyus { width: 55%; }
   
   .activity .actinfo {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     gap: 1.5rem;
-    padding: 1.2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .actinfo .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: .8rem;
+    
   }
   
   
