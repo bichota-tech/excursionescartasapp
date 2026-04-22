@@ -129,23 +129,20 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 
-.about-page { padding-inline: 1rem; }
-
-section { margin-bottom: 3rem; }
-
 /* Presentation */
 .presentation-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  margin-inline: 1rem;
 }
 
 .presentation-img {
   background-image: url('/img/students_museum.png');
   background-size: cover;
   background-position: center;
-  width: 90%;
+  width: 100%;
   height: 60vw;
   max-height: 420px;
   flex-shrink: 0;
@@ -179,9 +176,10 @@ section { margin-bottom: 3rem; }
 }
 
 /* Timeline */
+
 .timeline {
   position: relative;
-  max-width: 800px;
+  width: 90%;
   margin: 0 auto;
   padding-left: 2rem;
 }
@@ -238,11 +236,14 @@ section { margin-bottom: 3rem; }
 .timeline-content p { font-size: clamp(.85rem, 1.8vw, 1rem); }
 
 /* Methodology */
+.methodology, .presentation, .timeline-section {
+  margin-bottom: 4rem;
+}
 .method-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 1100px;
+  gap: .5rem;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -272,13 +273,27 @@ section { margin-bottom: 3rem; }
 
 /* CTA */
 .about-cta {
-  background-color: var(--navegation);
-  border-radius: 20px;
-  padding: 3rem 2rem;
+  background-image: url(/img/students_museum.png);
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 2rem;
+  margin-bottom: 0;
   text-align: center;
+  
 }
 
-.cta-box { max-width: 700px; margin: 0 auto; }
+.cta-box { 
+  background-color: #0000006f;
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 1.2rem;
+  max-width: 700px; 
+  margin: 0 auto; 
+}
+
+.cta-box .cta{
+  margin-bottom: 0;
+}
 .cta-box h2 { color: white; font-size: clamp(1.3rem, 3vw, 2rem); margin-bottom: 1rem; }
 .cta-box p  { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; }
 
