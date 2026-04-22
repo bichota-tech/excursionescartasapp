@@ -93,12 +93,12 @@
             <h3>Durante: Inmersión presencial</h3>
             <p>Las visitas son guiadas con metodología activa: análisis in situ, debate, actividades participativas y conexión constante con los contenidos del programa universitario.</p>
           </article>
-          <article class="method-card diagfirst" v-anim="'slide-bottom'">
+          <article class="method-card diagsecond" v-anim="'slide-bottom'">
             <div class="method-icon" aria-hidden="true"><i class="bi bi-book"></i></div>
             <h3>Después: Seguimiento académico</h3>
             <p>Entregamos material complementario —guías de análisis, bibliografía comentada— para que la experiencia se integre plenamente en el currículum universitario.</p>
           </article>
-          <article class="method-card diagsecond" v-anim="'slide-bottom'">
+          <article class="method-card diagfirst" v-anim="'slide-bottom'">
             <div class="method-icon" aria-hidden="true"><i class="bi bi-chat-heart"></i></div>
             <h3>Siempre: Atención personalizada</h3>
             <p>Cada grupo es único. Adapto el contenido, el ritmo y el nivel de profundidad a las necesidades específicas de cada facultad, programa y grupo de estudiantes.</p>
@@ -243,13 +243,13 @@ import { RouterLink } from 'vue-router'
   display: grid;
   grid-template-columns: 1fr;
   gap: .5rem;
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
+  
 }
 
 .method-card {
   background-color: var(--navegation);
-  padding: 2rem;
+  padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,10 +276,12 @@ import { RouterLink } from 'vue-router'
   background-image: url(/img/students_museum.png);
   background-position: center;
   background-size: cover;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   margin-bottom: 0;
   text-align: center;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cta-box { 
@@ -287,13 +289,13 @@ import { RouterLink } from 'vue-router'
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 1.2rem;
-  max-width: 700px; 
-  margin: 0 auto; 
+  max-width: 500px; 
 }
 
 .cta-box .cta{
   margin-bottom: 0;
 }
+
 .cta-box h2 { color: white; font-size: clamp(1.3rem, 3vw, 2rem); margin-bottom: 1rem; }
 .cta-box p  { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; }
 
@@ -301,16 +303,30 @@ import { RouterLink } from 'vue-router'
 .btn-contact i { color: #4ade80; }
 
 @media (min-width: 768px) {
-  .about-page { padding-inline: 2.5rem; }
-  section { padding-inline: 3rem; }
 
-  .presentation-grid { flex-direction: row; align-items: flex-start; gap: 3rem; }
-  .presentation-img  { width: 45%; height: 65vh; max-height: none; }
+  .presentation-grid { 
+    flex-direction: row; 
+    align-items: flex-start; 
+    gap: 2rem; 
+    margin-inline: 0;
+  }
+
+  .presentation-img  { 
+    width: 45%; 
+    height: 50vh; 
+    max-height: none; 
+  }
+
+  .about-cta {
+    justify-content: right;
+  }
 
   .timeline { padding-left: 3rem; }
   .timeline::before { left: .9rem; }
-  .timeline-icon { margin-left: -3rem; }
+  .timeline-icon { margin-left: -3.5rem; }
 
-  .method-grid { grid-template-columns: repeat(2, 1fr); }
+  .method-grid { 
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
