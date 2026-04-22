@@ -503,7 +503,7 @@ a.btn-secondary i{
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  box-shadow: 4px 3px 9px -1px var(--navegation);
+  box-shadow: 5px 5px 12px rgba(11, 75, 193, 0.251);
   background-color: transparent;
 }
 
@@ -655,9 +655,8 @@ h2#services-heading {
   font-size: 1.4rem;
   background-color: var(--atomic);
   border-radius: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: .3rem;
+  padding: .2rem .4rem;
+  flex-shrink: 0;
   
 }
 
@@ -909,18 +908,25 @@ h2#services-heading {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: .5rem 1.2rem .8rem 1.5rem;
+    padding: .5rem 1.2rem .5rem 1.5rem;
   }
   
   .footer-cta {
     width: 100%;
-    justify-content: flex-end;
-    padding-right: 5%;
+    justify-content: center;
+    align-items: center;
   }
   
   .footer-cta-content {
-    text-align: left;
+    padding: 2rem;
+    text-align: center;
     max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-cta {
+    align-items: flex-end;
   }
 }
 </style>
