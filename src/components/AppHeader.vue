@@ -1,43 +1,85 @@
 <template>
-  <header role="banner">
-    <!-- Liens de skip para accesibilidad -->
+  <header class="sticky top-0 z-[900] w-full bg-white/90 backdrop-blur-md border-b border-navigation/10 shadow-[0_4px_16px_rgba(0,51,128,0.05)]">
+    <!-- Skip link accesibilidad -->
     <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-    <div class="header-inner">
-      <!-- Logo / Nombre -->
-      <RouterLink to="/inicio" class="logo" aria-label="Excursiones Cartas - Ir al inicio">
-        <img src="/img/menu-icon.png" alt="Bandera de los Países Bajos" />
-        <span>Excursiones<br /><strong>Cartas</strong></span>
+    <div class="flex items-center justify-between px-4 md:px-8 py-2.5 max-w-7xl mx-auto">
+
+      <!-- Logo -->
+      <RouterLink
+        to="/inicio"
+        class="flex items-center gap-2.5 text-navigation no-underline"
+        aria-label="Excursiones Cartas - Ir al inicio"
+      >
+        <img
+          src="/img/menu-icon.png"
+          alt="Bandera de los Países Bajos"
+          class="w-12 md:w-14 h-auto object-contain"
+        />
+        <span class="font-serif text-base md:text-lg leading-tight font-semibold text-navigation">
+          Excursiones<br /><strong>Cartas</strong>
+        </span>
       </RouterLink>
 
       <!-- Botón hamburguesa (móvil) -->
       <button
-        class="hamburguer"
+        class="flex flex-col gap-1.5 md:hidden p-1.5 w-9 bg-transparent border-none cursor-pointer"
         id="hamburguer-btn"
         :aria-expanded="appStore.menuOpen.toString()"
         aria-controls="nav-menu"
         aria-label="Abrir menú de navegación"
         @click="appStore.toggleMenu"
       >
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <span
+          v-for="n in 3"
+          :key="n"
+          class="block w-full h-0.5 bg-navigation rounded transition-all duration-300"
+          :class="{
+            'translate-y-2 rotate-45':  n === 1 && appStore.menuOpen,
+            'opacity-0':                n === 2 && appStore.menuOpen,
+            '-translate-y-2 -rotate-45': n === 3 && appStore.menuOpen,
+          }"
+        ></span>
       </button>
 
       <!-- Navegación -->
-      <nav :class="['nav-menu', { active: appStore.menuOpen }]" id="nav-menu" aria-label="Menú principal" role="navigation">
-        <ul role="list">
+      <nav
+        :class="[
+          'fixed md:static top-0 left-0 h-screen md:h-auto w-[min(75vw,280px)] md:w-auto',
+          'bg-navigation/96 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none',
+          'pt-16 md:pt-0 px-6 md:px-0 pb-8 md:pb-0',
+          'transition-[left] duration-300 md:transition-none z-[800] md:z-auto overflow-y-auto md:overflow-visible',
+          appStore.menuOpen ? 'left-0' : 'left-[-100%]'
+        ]"
+        id="nav-menu"
+        aria-label="Menú principal"
+        role="navigation"
+      >
+        <ul class="flex flex-col md:flex-row md:items-center gap-4 md:gap-1 list-none m-0 p-0">
           <li v-for="link in navLinks" :key="link.to">
             <RouterLink
               :to="link.to"
               :aria-label="`Ir a ${link.label}`"
+              class="block text-white md:text-navigation font-sans text-base md:text-sm font-medium
+                     px-3 py-2 md:py-1.5 rounded-none md:rounded
+                     border-l-[3px] md:border-l-0 border-b-2 border-transparent
+                     hover:bg-white/10 md:hover:bg-transparent
+                     hover:border-l-atomic md:hover:border-l-transparent md:hover:border-b-navigation
+                     [&.router-link-active]:bg-white/10 md:[&.router-link-active]:bg-transparent
+                     [&.router-link-active]:border-l-atomic md:[&.router-link-active]:border-l-transparent md:[&.router-link-active]:border-b-navigation
+                     transition-colors duration-200 no-underline"
               @click="appStore.closeMenu"
             >{{ link.label }}</RouterLink>
           </li>
           <li>
             <a
               href="tel:+34640947912"
-              class="nav-cta"
+              class="flex items-center gap-1.5 mt-4 md:mt-0
+                     bg-atomic md:bg-navigation text-white font-sans font-bold
+                     px-3.5 py-2 md:py-1.5 rounded-xl
+                     shadow-[0_4px_12px_rgba(255,119,63,0.2)] md:shadow-none
+                     border-none! hover:bg-atomic/90 md:hover:bg-smart-blue
+                     transition-colors duration-200 no-underline"
               aria-label="Llamar al +34 640 947 912"
               @click="appStore.closeMenu"
             >
@@ -49,10 +91,10 @@
       </nav>
     </div>
 
-    <!-- Overlay para cerrar menú -->
+    <!-- Overlay para cerrar menú móvil -->
     <div
       v-if="appStore.menuOpen"
-      class="nav-overlay"
+      class="fixed inset-0 bg-black/45 z-[799] md:hidden"
       aria-hidden="true"
       @click="appStore.closeMenu"
     ></div>
@@ -73,204 +115,3 @@ const navLinks = [
   { to: '/contacto',  label: 'Contacto' },
 ]
 </script>
-
-<style scoped>
-/* Skip link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--navegation);
-  color: white;
-  padding: 8px 12px;
-  z-index: 9999;
-  font-family: 'Montserrat', sans-serif;
-  transition: top 0.2s;
-  text-decoration: none;
-}
-.skip-link:focus { top: 0; }
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  width: 100%;
-  background: var(--glass-bg, rgba(255, 255, 255, 0.95));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 51, 128, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 51, 128, 0.05);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .6rem 1.2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  text-decoration: none;
-  color: var(--navegation);
-}
-
-.logo img {
-  width: clamp(3rem, 6vw, 3.5rem);
-  height: auto;
-  object-fit: contain;
-}
-
-.logo span {
-  font-family: 'Frank Ruhl Libre', serif;
-  font-size: clamp(.9rem, 2vw, 1.2rem);
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-/* Hamburguesa */
-.hamburguer {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  width: 36px;
-}
-
-.bar {
-  width: 100%;
-  height: 3px;
-  background-color: var(--navegation);
-  border-radius: 3px;
-  transition: all 0.3s ease;
-  display: block;
-}
-
-.hamburguer[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburguer[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
-.hamburguer[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-/* Nav menú móvil */
-.nav-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: min(75vw, 280px);
-  height: 100vh;
-  background: rgba(0, 51, 128, 0.96);
-  backdrop-filter: blur(16px);
-  padding: 5rem 1.5rem 2rem;
-  transition: left 0.3s ease;
-  z-index: 800;
-  overflow-y: auto;
-}
-
-.nav-menu.active { left: 0; }
-
-.nav-menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.nav-menu a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 500;
-  padding: .5rem .8rem;
-  border-radius: 8px;
-  border-left: 3px solid transparent;
-  transition: background .25s, border-color .25s;
-}
-
-.nav-menu a:hover,
-.nav-menu a.router-link-active {
-  background: rgba(255, 255, 255, 0.12);
-  border-left-color: var(--atomic);
-}
-
-.nav-cta {
-  display: flex !important;
-  align-items: center;
-  gap: .4rem;
-  margin-top: 1rem;
-  background-color: var(--atomic) !important;
-  color: white !important;
-  border-radius: 12px !important;
-  border-left: none !important;
-  font-weight: 700 !important;
-  box-shadow: 0 4px 12px rgba(255, 119, 63, 0.2);
-}
-
-/* Overlay */
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 799;
-}
-
-/* Desktop */
-@media (min-width: 768px) {
-  .hamburguer { display: none; }
-
-  .nav-menu {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    backdrop-filter: none;
-    padding: 0;
-    overflow: visible;
-    display: block;
-  }
-
-  .nav-menu ul {
-    flex-direction: row;
-    align-items: center;
-    gap: .3rem;
-  }
-
-  .nav-menu a {
-    color: var(--navegation);
-    font-size: clamp(.85rem, 1.4vw, 1rem);
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    border-radius: 0;
-    padding: .4rem .6rem;
-  }
-
-  .nav-menu a:hover,
-  .nav-menu a.router-link-active {
-    background: none;
-    border-left: none;
-    border-bottom: 2px solid var(--navegation);
-  }
-
-  .nav-cta {
-    background: var(--navegation) !important;
-    color: white !important;
-    border-radius: 10px !important;
-    padding: .45rem .9rem !important;
-    border-bottom: none !important;
-    margin-top: 0 !important;
-  }
-
-  .nav-cta:hover {
-    background: var(--smart_blue) !important;
-    border-bottom: none !important;
-  }
-}
-</style>
