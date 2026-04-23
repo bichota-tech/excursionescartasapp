@@ -1,5 +1,6 @@
 <template>
   <div class="contact-view">
+
     <!-- Hero -->
     <section class="page-hero" aria-label="Cabecera Contacto">
       <img src="/img/students_streets.png" alt="Estudiantes en las calles de Utrecht" />
@@ -9,22 +10,27 @@
       </div>
     </section>
 
-    <main class="contact-page">
-      <section class="contact-section" aria-labelledby="contact-heading">
+    <main class="w-full px-0! md:px-8">
+
+      <!-- ── ¿Hablamos? ───────────────────────────────────── -->
+      <section class="mb-12 md:mb-16" aria-labelledby="contact-heading">
         <h2 id="contact-heading" class="section-title">¿Hablamos?</h2>
 
-        <div class="contact-layout">
+        <div class="flex flex-col lg:flex-row gap-10 max-w-5xl mx-auto items-start">
 
           <!-- Formulario -->
-          <div class="contact-form-wrap" v-anim="'slide-left'">
+          <div class="w-full lg:flex-1" v-anim="'slide-left'">
             <form
-              class="contact-form"
+              class="flex flex-col gap-5 bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_24px_rgba(0,51,128,0.1)]"
               @submit.prevent="handleSubmit"
               novalidate
               aria-label="Formulario de contacto"
             >
-              <div class="form-group">
-                <label for="contact-name">Nombre completo <span aria-hidden="true" class="required">*</span></label>
+              <!-- Nombre -->
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-name" class="font-sans text-sm font-semibold text-navigation">
+                  Nombre completo <span class="text-atomic" aria-hidden="true">*</span>
+                </label>
                 <input
                   id="contact-name"
                   v-model="form.name"
@@ -34,12 +40,17 @@
                   required
                   :aria-invalid="errors.name ? 'true' : 'false'"
                   :aria-describedby="errors.name ? 'name-error' : undefined"
+                  class="font-sans text-sm text-primary border-2 rounded-xl px-4 py-3 bg-[#f8faff] outline-none transition-colors duration-200 cursor-text"
+                  :class="errors.name ? 'border-dutch-red' : 'border-navigation/20 focus:border-navigation focus:shadow-[0_0_0_3px_rgba(0,51,128,0.1)]'"
                 />
-                <span v-if="errors.name" id="name-error" class="form-error" role="alert">{{ errors.name }}</span>
+                <span v-if="errors.name" id="name-error" class="font-sans text-xs font-semibold text-dutch-red" role="alert">{{ errors.name }}</span>
               </div>
 
-              <div class="form-group">
-                <label for="contact-email">Correo electrónico <span aria-hidden="true" class="required">*</span></label>
+              <!-- Email -->
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-email" class="font-sans text-sm font-semibold text-navigation">
+                  Correo electrónico <span class="text-atomic" aria-hidden="true">*</span>
+                </label>
                 <input
                   id="contact-email"
                   v-model="form.email"
@@ -49,29 +60,38 @@
                   required
                   :aria-invalid="errors.email ? 'true' : 'false'"
                   :aria-describedby="errors.email ? 'email-error' : undefined"
+                  class="font-sans text-sm text-primary border-2 rounded-xl px-4 py-3 bg-[#f8faff] outline-none transition-colors duration-200 cursor-text"
+                  :class="errors.email ? 'border-dutch-red' : 'border-navigation/20 focus:border-navigation focus:shadow-[0_0_0_3px_rgba(0,51,128,0.1)]'"
                 />
-                <span v-if="errors.email" id="email-error" class="form-error" role="alert">{{ errors.email }}</span>
+                <span v-if="errors.email" id="email-error" class="font-sans text-xs font-semibold text-dutch-red" role="alert">{{ errors.email }}</span>
               </div>
 
-              <div class="form-group">
-                <label for="contact-institution">Universidad / Institución</label>
+              <!-- Institución -->
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-institution" class="font-sans text-sm font-semibold text-navigation">Universidad / Institución</label>
                 <input
                   id="contact-institution"
                   v-model="form.institution"
                   type="text"
                   placeholder="Universidad de Barcelona"
                   autocomplete="organization"
+                  class="font-sans text-sm text-primary border-2 border-navigation/20 rounded-xl px-4 py-3 bg-[#f8faff] outline-none focus:border-navigation focus:shadow-[0_0_0_3px_rgba(0,51,128,0.1)] transition-colors duration-200 cursor-text"
                 />
               </div>
 
-              <div class="form-group">
-                <label for="contact-subject">Tipo de consulta <span aria-hidden="true" class="required">*</span></label>
+              <!-- Tipo de consulta -->
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-subject" class="font-sans text-sm font-semibold text-navigation">
+                  Tipo de consulta <span class="text-atomic" aria-hidden="true">*</span>
+                </label>
                 <select
                   id="contact-subject"
                   v-model="form.subject"
                   required
                   :aria-invalid="errors.subject ? 'true' : 'false'"
                   :aria-describedby="errors.subject ? 'subject-error' : undefined"
+                  class="font-sans text-sm text-primary border-2 rounded-xl px-4 py-3 bg-[#f8faff] outline-none transition-colors duration-200"
+                  :class="errors.subject ? 'border-dutch-red' : 'border-navigation/20 focus:border-navigation focus:shadow-[0_0_0_3px_rgba(0,51,128,0.1)]'"
                 >
                   <option value="" disabled>Selecciona una opción</option>
                   <option value="excursion">Solicitud de excursión académica</option>
@@ -79,11 +99,14 @@
                   <option value="collaboration">Colaboración institucional</option>
                   <option value="other">Otro</option>
                 </select>
-                <span v-if="errors.subject" id="subject-error" class="form-error" role="alert">{{ errors.subject }}</span>
+                <span v-if="errors.subject" id="subject-error" class="font-sans text-xs font-semibold text-dutch-red" role="alert">{{ errors.subject }}</span>
               </div>
 
-              <div class="form-group">
-                <label for="contact-message">Mensaje <span aria-hidden="true" class="required">*</span></label>
+              <!-- Mensaje -->
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-message" class="font-sans text-sm font-semibold text-navigation">
+                  Mensaje <span class="text-atomic" aria-hidden="true">*</span>
+                </label>
                 <textarea
                   id="contact-message"
                   v-model="form.message"
@@ -92,14 +115,21 @@
                   required
                   :aria-invalid="errors.message ? 'true' : 'false'"
                   :aria-describedby="errors.message ? 'message-error' : undefined"
+                  class="font-sans text-sm text-primary border-2 rounded-xl px-4 py-3 bg-[#f8faff] outline-none resize-y transition-colors duration-200 cursor-text"
+                  :class="errors.message ? 'border-dutch-red' : 'border-navigation/20 focus:border-navigation focus:shadow-[0_0_0_3px_rgba(0,51,128,0.1)]'"
                 ></textarea>
-                <span v-if="errors.message" id="message-error" class="form-error" role="alert">{{ errors.message }}</span>
+                <span v-if="errors.message" id="message-error" class="font-sans text-xs font-semibold text-dutch-red" role="alert">{{ errors.message }}</span>
               </div>
 
-              <p class="form-note"><span class="required">*</span> Campos obligatorios</p>
+              <p class="font-sans text-xs text-secondary"><span class="text-atomic">*</span> Campos obligatorios</p>
 
-              <div class="cta">
-                <button type="submit" class="btn-submit" :disabled="submitted">
+              <div class="flex justify-center">
+                <button
+                  type="submit"
+                  :disabled="submitted"
+                  class="inline-flex items-center gap-2 px-8 py-3 font-sans text-base font-bold text-white rounded-xl border-none cursor-pointer transition-all duration-300"
+                  :class="submitted ? 'bg-[#4ade80] cursor-default' : 'bg-navigation hover:bg-smart-blue hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(11,74,193,0.2)]'"
+                >
                   <template v-if="!submitted">
                     <i class="bi bi-send-fill" aria-hidden="true"></i> Enviar mensaje
                   </template>
@@ -109,89 +139,85 @@
                 </button>
               </div>
 
+              <!-- Mensaje de éxito -->
               <div
                 v-if="submitted"
-                class="success-msg"
+                class="flex items-center gap-3 bg-[#4ade80]/15 border border-[#4ade80] rounded-xl p-4 font-sans text-sm text-[#166534]"
                 role="alert"
                 aria-live="polite"
               >
-                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <i class="bi bi-check-circle-fill text-xl text-[#22c55e]" aria-hidden="true"></i>
                 Gracias por contactarnos. Te responderemos en menos de 24 horas.
               </div>
             </form>
           </div>
 
           <!-- Info de contacto -->
-          <aside class="contact-info" v-anim="'slide-right'" aria-label="Información de contacto">
-            <div class="info-card diagfirst">
-              <div class="info-icon" aria-hidden="true"><i class="bi bi-telephone-fill"></i></div>
-              <div>
-                <h3>Teléfono</h3>
-                <a href="tel:+34640947912" aria-label="Llamar al +34 640 947 912">+34 640 947 912</a>
+          <aside class="flex flex-col gap-4 w-full lg:w-[360px] lg:shrink-0" v-anim="'slide-right'" aria-label="Información de contacto">
+            <div
+              v-for="info in contactInfo"
+              :key="info.title"
+              :class="['flex items-center gap-4 px-5 py-5 bg-white shadow-[var(--card-shadow)] transition-transform duration-300 hover:translate-x-1.5', info.shape]"
+            >
+              <div
+                class="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+                :class="info.iconBg"
+                aria-hidden="true"
+              >
+                <i :class="['bi', info.icon, 'text-white text-xl']"></i>
               </div>
-            </div>
-
-            <div class="info-card diagsecond">
-              <div class="info-icon whatsapp-icon-wrap" aria-hidden="true"><i class="bi bi-whatsapp"></i></div>
               <div>
-                <h3>WhatsApp</h3>
-                <a href="https://wa.me/640947912" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje de WhatsApp (se abre en nueva pestaña)">
-                  Envíanos un mensaje
-                </a>
-              </div>
-            </div>
-
-            <div class="info-card diagfirst">
-              <div class="info-icon" aria-hidden="true"><i class="bi bi-envelope-fill"></i></div>
-              <div>
-                <h3>Correo electrónico</h3>
-                <a href="mailto:adalvarez2021@gmail.com" aria-label="Enviar correo a adalvarez2021@gmail.com">
-                  adalvarez2021@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div class="info-card diagsecond">
-              <div class="info-icon linkedin-icon-wrap" aria-hidden="true"><i class="bi bi-linkedin"></i></div>
-              <div>
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de LinkedIn (se abre en nueva pestaña)">
-                  Yanetsis Cartas Álvarez
-                </a>
-              </div>
-            </div>
-
-            <div class="info-card info-location diagfirst">
-              <div class="info-icon" aria-hidden="true"><i class="bi bi-geo-alt-fill"></i></div>
-              <div>
-                <h3>Ubicación</h3>
-                <p>Utrecht, Países Bajos<br />
-                  <em>Visitas en toda Holanda y Bélgica</em>
+                <h3 class="font-serif text-[clamp(.9rem,2vw,1.1rem)] text-navigation mb-0.5 text-left">{{ info.title }}</h3>
+                <a
+                  v-if="info.href"
+                  :href="info.href"
+                  :target="info.external ? '_blank' : undefined"
+                  :rel="info.external ? 'noopener noreferrer' : undefined"
+                  :aria-label="info.ariaLabel"
+                  class="font-sans text-[clamp(.85rem,1.8vw,1rem)] text-secondary no-underline border-b border-transparent pb-0.5 hover:text-navigation hover:border-navigation transition-colors duration-200"
+                >{{ info.label }}</a>
+                <p v-else class="font-sans text-[clamp(.85rem,1.8vw,1rem)] text-secondary leading-snug m-0">
+                  Utrecht, Países Bajos<br /><em class="text-atomic">Visitas en toda Holanda y Bélgica</em>
                 </p>
               </div>
             </div>
           </aside>
+
         </div>
       </section>
 
-      <!-- Mapa decorativo / frase -->
-      <section class="closing-section" aria-label="Sección de cierre">
-        <div class="closing-box">
-          <img src="/img/utrecht_aerial.png" alt="Vista aérea de Utrecht" class="closing-img" aria-hidden="true" />
-          <div class="closing-content">
-            <h2>¿Listo para vivir Utrecht?</h2>
-            <p>Más de 18 años de experiencia acompañando a estudiantes universitarios hispano hablantes en su descubrimiento del arte y la cultura de los Países Bajos.</p>
-            <div class="cta">
-              <a href="https://wa.me/640947912" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje de WhatsApp">
+      <!-- ── Closing con imagen de fondo ─────────────────── -->
+      <section class="mb-0 px-0" aria-label="Sección de cierre">
+        <div class="relative overflow-hidden min-h-[25rem] flex items-center">
+          <img
+            src="/img/utrecht_aerial.png"
+            alt="Vista aérea de Utrecht"
+            class="absolute inset-0 w-full h-full object-cover brightness-40 saturate-[1.3]"
+            aria-hidden="true"
+          />
+          <div class="relative z-[1] p-8 md:p-12 max-w-2xl">
+            <h2 class="font-serif text-[clamp(1.5rem,4vw,2.5rem)] text-white text-left mb-4">¿Listo para vivir Utrecht?</h2>
+            <p class="font-sans text-white/88 mb-6 text-[clamp(.9rem,1.8vw,1.1rem)]">
+              Más de 18 años de experiencia acompañando a estudiantes universitarios hispanohablantes en su descubrimiento del arte y la cultura de los Países Bajos.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="https://wa.me/640947912"
+                class="btn-contact-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Enviar mensaje de WhatsApp"
+              >
                 <i class="bi bi-whatsapp" aria-hidden="true"></i> Escríbenos ahora
               </a>
-              <a href="tel:+34640947912" class="btn-secondary" aria-label="Llamar al +34 640 947 912">
+              <a href="tel:+34640947912" class="btn-contact-secondary" aria-label="Llamar al +34 640 947 912">
                 <i class="bi bi-telephone-fill" aria-hidden="true"></i> +34 640 947 912
               </a>
             </div>
           </div>
         </div>
       </section>
+
     </main>
   </div>
 </template>
@@ -199,268 +225,69 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-const form = reactive({
-  name: '',
-  email: '',
-  institution: '',
-  subject: '',
-  message: '',
-})
-
+const form = reactive({ name: '', email: '', institution: '', subject: '', message: '' })
 const errors = reactive({})
 const submitted = ref(false)
 
 const validate = () => {
   Object.keys(errors).forEach((k) => delete errors[k])
   let valid = true
-
   if (!form.name.trim()) { errors.name = 'El nombre es obligatorio.'; valid = false }
-  if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) {
-    errors.email = 'Introduce un correo electrónico válido.'
-    valid = false
-  }
+  if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) { errors.email = 'Introduce un correo electrónico válido.'; valid = false }
   if (!form.subject) { errors.subject = 'Selecciona el tipo de consulta.'; valid = false }
-  if (!form.message.trim() || form.message.length < 20) {
-    errors.message = 'El mensaje debe tener al menos 20 caracteres.'
-    valid = false
-  }
-
+  if (!form.message.trim() || form.message.length < 20) { errors.message = 'El mensaje debe tener al menos 20 caracteres.'; valid = false }
   return valid
 }
 
 const handleSubmit = () => {
   if (!validate()) return
-  // Simular envío (aquí iría la integración con el backend/Formspree/EmailJS)
   submitted.value = true
 }
+
+const contactInfo = [
+  { shape: 'diagfirst',  icon: 'bi-telephone-fill', iconBg: 'bg-navigation',  title: 'Teléfono',          href: 'tel:+34640947912',             label: '+34 640 947 912',            ariaLabel: 'Llamar al +34 640 947 912',    external: false },
+  { shape: 'diagsecond', icon: 'bi-whatsapp',        iconBg: 'bg-[#25d366]',   title: 'WhatsApp',          href: 'https://wa.me/640947912',       label: 'Envíanos un mensaje',        ariaLabel: 'Enviar mensaje de WhatsApp',  external: true  },
+  { shape: 'diagfirst',  icon: 'bi-envelope-fill',   iconBg: 'bg-navigation',  title: 'Correo electrónico', href: 'mailto:adalvarez2021@gmail.com', label: 'adalvarez2021@gmail.com',    ariaLabel: 'Enviar correo',               external: false },
+  { shape: 'diagsecond', icon: 'bi-linkedin',        iconBg: 'bg-[#0a66c2]',   title: 'LinkedIn',          href: 'https://linkedin.com',          label: 'Yanetsis Cartas Álvarez',   ariaLabel: 'Ver perfil de LinkedIn',      external: true  },
+  { shape: 'diagfirst',  icon: 'bi-geo-alt-fill',    iconBg: 'bg-navigation',  title: 'Ubicación',         href: null,                            label: null,                         ariaLabel: null,                           external: false },
+]
 </script>
 
 <style scoped>
-.contact-page { padding-inline: 1rem; }
-section { margin-bottom: 3rem; }
-
-.contact-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Form */
-.contact-form-wrap { width: 100%; }
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,51,128,0.1);
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-}
-
-.form-group label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--navegation);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .95rem;
-  color: var(--text_primary);
-  border: 2px solid rgba(0,51,128,0.2);
-  border-radius: 10px;
-  padding: .7rem 1rem;
-  background: #f8faff;
-  transition: border-color .25s, box-shadow .25s;
-  outline: none;
-  cursor: text;
-}
-
-.form-group textarea { resize: vertical; }
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--navegation);
-  box-shadow: 0 0 0 3px rgba(0,51,128,0.1);
-}
-
-.form-group input[aria-invalid="true"],
-.form-group select[aria-invalid="true"],
-.form-group textarea[aria-invalid="true"] {
-  border-color: var(--cta_accent);
-}
-
-.form-error {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .8rem;
-  color: var(--cta_accent);
-  font-weight: 600;
-}
-
-.required { color: var(--atomic); }
-
-.form-note {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .8rem;
-  color: var(--text_secondary);
-}
-
-.btn-submit {
-  padding: .8rem 2rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: var(--navegation);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
+.btn-contact-primary {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  transition: transform .3s, background-color .3s;
-}
-
-.btn-submit:hover:not(:disabled) { transform: translateY(-2px); background-color: var(--smart_blue); box-shadow: 0 4px 12px rgba(11, 74, 193, 0.2); }
-.btn-submit:disabled { background-color: #4ade80; cursor: default; }
-
-.success-msg {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  background-color: rgba(74, 222, 128, 0.15);
-  border: 1px solid #4ade80;
-  border-radius: 10px;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: .95rem;
-  color: #166534;
-}
-
-.success-msg i { font-size: 1.3rem; color: #22c55e; }
-
-/* Contact Info */
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  width: 100%;
-}
-
-.info-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1.2rem 1.5rem;
-  background: white;
-  box-shadow: var(--card-shadow);
-  transition: transform .3s;
-}
-
-.info-card:hover { transform: translateX(6px); }
-
-.info-icon {
-  width: 3.2rem;
-  height: 3.2rem;
-  background-color: var(--navegation);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.info-icon i { color: white; font-size: 1.2rem; }
-.whatsapp-icon-wrap, .whatsapp-icon-wrap { background-color: #25d366; }
-.linkedin-icon-wrap { background-color: #0a66c2; }
-
-.info-card h3 {
-  font-size: clamp(.9rem, 2vw, 1.1rem);
-  color: var(--navegation);
-  margin-bottom: .2rem;
-  text-align: left;
-}
-
-.info-card a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(.85rem, 1.8vw, 1rem);
-  color: var(--text_secondary);
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-weight: 700;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color .2s, border-color .2s;
-}
-
-.info-card a:hover { color: var(--navegation); border-bottom-color: var(--navegation); }
-
-.info-card p {
-  font-size: clamp(.85rem, 1.8vw, 1rem);
-  color: var(--text_secondary);
-  line-height: 1.5;
-  margin: 0;
-}
-
-.info-card p em { color: var(--atomic); font-style: italic; }
-
-/* Closing section */
-.closing-section { margin-bottom: 0; }
-
-.closing-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  min-height: 22rem;
-  display: flex;
-  align-items: center;
-}
-
-.closing-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.4) saturate(1.3);
-}
-
-.closing-content {
-  position: relative;
-  z-index: 1;
-  padding: 3rem 2rem;
-  max-width: 600px;
-}
-
-.closing-content h2 {
-  font-family: 'Frank Ruhl Libre', serif;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 15px;
+  background-color: var(--atomic);
   color: white;
-  text-align: left;
-  margin-bottom: 1rem;
+  box-shadow: 0 4px 14px rgba(255, 119, 63, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
 }
+.btn-contact-primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-.closing-content p { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; font-size: clamp(.9rem, 1.8vw, 1.1rem); }
-
-
-.btn-contact i { color: rgba(255,255,255,0.8); }
-
-@media (min-width: 768px) {
-  .contact-page { padding-inline: 2.5rem; }
-  section { padding-inline: 3rem; }
-  .contact-layout { flex-direction: row; align-items: flex-start; }
-  .contact-form-wrap { flex: 1; }
-  .contact-info { width: 360px; flex-shrink: 0; }
+.btn-contact-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: var(--navegation);
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
 }
+.btn-contact-secondary:hover { transform: translateY(-2px); background-color: var(--smart_blue); }
 </style>
