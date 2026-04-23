@@ -77,7 +77,7 @@
           role="img"
           aria-label="Fotografía de estudiantes en excursión"
         >
-          <div class="stamp absolute top-[50%] right-[-15%] md:right-[-5%] rounded-full border-2 border-dashed border-atomic flex items-center justify-center w-[clamp(10rem,25vw,14rem)] h-[clamp(10rem,25vw,14rem)]">
+          <div class="stamp absolute top-[65%] right-[0%] md:right-[-5%] rounded-full border-2 border-dashed border-atomic flex items-center justify-center w-[clamp(10rem,25vw,14rem)] h-[clamp(10rem,25vw,14rem)]">
             <div class="rounded-full bg-atomic flex flex-col items-center justify-center w-[clamp(9rem,22vw,13rem)] h-[clamp(9rem,22vw,13rem)] p-3">
               <span class="text-white font-sans text-[clamp(2rem,4vw,3rem)] font-bold">+ 18</span>
               <span class="text-white font-sans text-[clamp(.9rem,3vw,1.1rem)] font-bold text-center">Años de Experiencia</span>
@@ -200,8 +200,8 @@
         </div>
 
         <!-- Avión decorativo -->
-        <div class="absolute bottom-[50%] right-[10%] w-full z-[-1] pointer-events-none" aria-hidden="true">
-          <img src="/img/plane.png" alt="" aria-hidden="true" class="w-1/2 lg:w-[50%] lg:relative lg:top-auto lg:right-auto" />
+        <div class="absolute bottom-[80%] right-[-5%] w-full z-[0] pointer-events-none" aria-hidden="true">
+          <img src="/img/plane.png" alt="" aria-hidden="true" class="w-[100%] md:w-[70%] lg:w-[50%] lg:relative lg:top-auto lg:right-auto" />
         </div>
 
         <!-- Por qué elegirnos -->
