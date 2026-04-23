@@ -9,44 +9,49 @@
       </div>
     </section>
 
-    <main class="blog-page">
+    <main class="w-full px-4 md:px-8 mb-12 md:mb-16">
       <section aria-labelledby="blog-heading">
         <h2 id="blog-heading" class="section-title">Últimos Artículos</h2>
 
         <!-- Grid de artículos -->
-        <div class="blog-grid" role="list">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto" role="list">
           <article
             v-for="post in blogStore.posts"
             :key="post.id"
-            class="blog-card"
+            class="bg-white rounded-[12px_0] shadow-[var(--shadow-card)] overflow-hidden transition-all duration-350 hover:-translate-y-1.5 hover:shadow-[var(--shadow-card-hover)] flex flex-col"
             v-anim="'fade-in'"
             role="listitem"
           >
-            <RouterLink :to="`/blog/${post.slug}`" class="card-img-link" :aria-label="`Leer artículo: ${post.title}`">
-              <div class="card-img">
-                <img :src="post.image" :alt="post.imageAlt" loading="lazy" />
-                <span class="card-category">{{ post.category }}</span>
+            <RouterLink :to="`/blog/${post.slug}`" class="block group" :aria-label="`Leer artículo: ${post.title}`">
+              <div class="relative h-[260px] overflow-hidden">
+                <img :src="post.image" :alt="post.imageAlt" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+                <span class="absolute top-4 left-4 bg-atomic text-white font-sans text-xs font-bold px-3 py-1.5 rounded-full tracking-wide">{{ post.category }}</span>
               </div>
             </RouterLink>
-            <div class="card-body">
-              <div class="card-meta" aria-label="Información del artículo">
-                <time :datetime="post.date" class="card-date">
+            
+            <div class="p-6 flex flex-col gap-3 flex-1">
+              <div class="flex flex-wrap gap-4" aria-label="Información del artículo">
+                <time :datetime="post.date" class="font-sans text-sm text-secondary flex items-center gap-1.5">
                   <i class="bi bi-calendar3" aria-hidden="true"></i> {{ post.date }}
                 </time>
-                <span class="card-read">
+                <span class="font-sans text-sm text-secondary flex items-center gap-1.5">
                   <i class="bi bi-clock" aria-hidden="true"></i> {{ post.readTime }} lectura
                 </span>
               </div>
-              <h3 class="card-title">
-                <RouterLink :to="`/blog/${post.slug}`">{{ post.title }}</RouterLink>
+              
+              <h3 class="font-serif text-[clamp(1.15rem,2.5vw,1.5rem)] text-navigation m-0 leading-snug">
+                <RouterLink :to="`/blog/${post.slug}`" class="no-underline text-inherit hover:text-atomic transition-colors duration-250">{{ post.title }}</RouterLink>
               </h3>
-              <p class="card-excerpt">{{ post.excerpt }}</p>
-              <div class="card-tags" role="list" :aria-label="`Etiquetas del artículo ${post.title}`">
-                <span v-for="tag in post.tags" :key="tag" class="tag" role="listitem">#{{ tag }}</span>
+              
+              <p class="text-secondary text-[clamp(.85rem,1.8vw,1rem)] leading-relaxed m-0">{{ post.excerpt }}</p>
+              
+              <div class="flex flex-wrap gap-2 mt-1" role="list" :aria-label="`Etiquetas del artículo ${post.title}`">
+                <span v-for="tag in post.tags" :key="tag" class="font-sans text-xs font-semibold text-smart-blue bg-smart-blue/10 px-2.5 py-1 rounded-full" role="listitem">#{{ tag }}</span>
               </div>
+              
               <RouterLink
                 :to="`/blog/${post.slug}`"
-                class="card-link"
+                class="inline-flex items-center gap-1.5 text-navigation font-sans text-sm font-bold no-underline mt-auto border-b-2 border-transparent pb-0.5 hover:border-navigation hover:text-smart-blue transition-colors duration-250 w-max"
                 :aria-label="`Leer artículo completo: ${post.title}`"
               >
                 Leer artículo <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -65,152 +70,3 @@ import { RouterLink } from 'vue-router'
 
 const blogStore = useBlogStore()
 </script>
-
-<style scoped>
-.blog-page { padding-inline: 1rem; }
-section { margin-bottom: 3rem; }
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Blog Card */
-.blog-card {
-  background: white;
-  border-radius: 12px 0;
-  box-shadow: var(--card-shadow);
-  overflow: hidden;
-  transition: transform .35s, box-shadow .35s;
-  display: flex;
-  flex-direction: column;
-}
-
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.card-img-link { display: block; }
-
-.card-img {
-  position: relative;
-  height: 260px;
-  overflow: hidden;
-}
-
-.card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s ease;
-}
-
-.blog-card:hover .card-img img { transform: scale(1.06); }
-
-.card-category {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background-color: var(--atomic);
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .75rem;
-  font-weight: 700;
-  padding: .3rem .8rem;
-  border-radius: 20px;
-  letter-spacing: .04em;
-}
-
-.card-body {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-  flex: 1;
-}
-
-.card-meta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.card-date, .card-read {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .8rem;
-  color: var(--text_secondary);
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-}
-
-.card-title {
-  font-family: 'Frank Ruhl Libre', serif;
-  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-  color: var(--navegation);
-  margin: 0;
-  text-align: left;
-  line-height: 1.3;
-}
-
-.card-title a {
-  text-decoration: none;
-  color: inherit;
-  transition: color .25s;
-}
-
-.card-title a:hover { color: var(--atomic); }
-
-.card-excerpt {
-  color: var(--text_secondary);
-  font-size: clamp(.85rem, 1.8vw, 1rem);
-  line-height: 1.6;
-}
-
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-}
-
-.tag {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--smart_blue);
-  background-color: rgba(11, 74, 193, 0.08);
-  padding: .2rem .6rem;
-  border-radius: 12px;
-}
-
-.card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  color: var(--navegation);
-  font-family: 'Montserrat', sans-serif;
-  font-size: .9rem;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: auto;
-  border-bottom: 2px solid transparent;
-  padding-bottom: .1rem;
-  transition: border-color .25s, color .25s;
-}
-
-.card-link:hover { border-bottom-color: var(--navegation); color: var(--smart_blue); }
-
-@media (min-width: 660px) {
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .blog-page { padding-inline: 2.5rem; }
-  section { padding-inline: 3rem; }
-  .blog-grid { grid-template-columns: repeat(3, 1fr); }
-}
-</style>
