@@ -32,7 +32,7 @@
 /* =============================================
    RESET COMPLEMENTARIO (Preflight de Tailwind cubre el resto)
    ============================================= */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; cursor: default;}
 
 a { cursor: pointer; }
 button { cursor: pointer; }
@@ -163,10 +163,10 @@ button { cursor: pointer; }
    ============================================= */
 
 /* Formas decorativas */
-.diagfirst { border-radius: 50% 0 !important; }
-.diagsecond { border-radius: 0 50% !important; }
-.imgtop { border-radius: 30% 0 !important; }
-.imgbottom { border-radius: 0 30% !important; }
+.diagfirst { border-radius: 40% 0 !important; }
+.diagsecond { border-radius: 0 40% !important; }
+.imgtop { border-radius: 20% 0 !important; }
+.imgbottom { border-radius: 0 20% !important; }
 
 /* Section Title con decoración */
 .section-title {
