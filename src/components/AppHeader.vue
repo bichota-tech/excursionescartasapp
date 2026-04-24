@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-[900] w-full bg-white/90 backdrop-blur-md border-b border-navigation/10 shadow-[0_4px_16px_rgba(0,51,128,0.05)]">
+  <header class="fixed top-0 z-[900] w-full bg-white/90 backdrop-blur-md border-b border-navigation/10 shadow-[0_4px_16px_rgba(0,51,128,0.05)]">
     <!-- Skip link accesibilidad -->
     <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
