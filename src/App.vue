@@ -15,16 +15,16 @@
   <!-- WhatsApp flotante -->
   <a
     href="https://wa.me/640947912"
-    class="fixed bottom-10 left-5 w-[60px] h-[60px] bg-whatsapp text-white rounded-full
+    class="fixed bottom-10 left-5 w-[55px] h-[55px] bg-navigation rounded-full
            flex items-center justify-center text-[2.2rem] z-[1000]
            shadow-[0_6px_16px_rgba(0,0,0,0.2)] no-underline
-           hover:scale-110 hover:rotate-[5deg] hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]
+           hover:scale-[.9] hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]
            transition-all duration-300"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contáctanos por WhatsApp (se abre en nueva pestaña)"
   >
-    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <i class="bi bi-whatsapp mt-[2px] ml-[2px] text-whatsapp" aria-hidden="true"></i>
   </a>
 
   <AppFooter />
