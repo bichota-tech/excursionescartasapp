@@ -14,10 +14,14 @@ app.directive('anim', {
     const animationClass = binding.value || el.dataset.anim
     if (!animationClass) return
 
+    // Ocultar el elemento antes de la animación para evitar parpadeos
+    el.style.opacity = '0'
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            el.style.opacity = '' // Restaurar opacidad
             el.classList.add(animationClass)
             observer.unobserve(el)
           }
