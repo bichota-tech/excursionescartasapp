@@ -72,13 +72,13 @@
 
         <!-- Imagen con badge de experiencia -->
         <div
-          class="diagfirst relative w-full md:w-1/2 h-[clamp(25rem,60vh,35rem)] bg-center bg-cover bg-no-repeat flex items-center justify-center"
+          class="diagfirst stagger relative w-full md:w-1/2 h-[clamp(25rem,60vh,35rem)] bg-center bg-cover bg-no-repeat flex items-center justify-center"
           style="background-image: url('/img/students_canal.png');"
           role="img"
           aria-label="Fotografía de estudiantes en excursión"
         >
-          <div class="stamp absolute rotate-6 top-[65%] right-[0%] md:right-[-5%] rounded-full border-2 border-dashed border-atomic flex items-center justify-center w-[clamp(10rem,25vw,14rem)] h-[clamp(10rem,25vw,14rem)]">
-            <div class="rounded-full bg-atomic flex flex-col items-center justify-center w-[clamp(9rem,22vw,13rem)] h-[clamp(9rem,22vw,13rem)] p-3">
+          <div class="absolute rotate-6 top-[65%] right-[0%] md:right-[-5%] rounded-full border-2 border-dashed border-atomic flex items-center justify-center w-[clamp(10rem,25vw,14rem)] h-[clamp(10rem,25vw,14rem)]" v-anim="'stamp'">
+            <div class="rounded-full bg-atomic flex flex-col items-center justify-center w-[clamp(9rem,22vw,13rem)] h-[clamp(9rem,22vw,13rem)] p-3" v-anim="'stamp'">
               <span class="text-white font-sans text-[clamp(2rem,4vw,3rem)] font-bold">+ 18</span>
               <span class="text-white font-sans text-[clamp(.9rem,3vw,1.1rem)] font-bold text-center">Años de Experiencia</span>
             </div>
