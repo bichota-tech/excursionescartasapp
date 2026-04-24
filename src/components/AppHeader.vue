@@ -3,7 +3,7 @@
     <!-- Skip link accesibilidad -->
     <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-    <div class="flex items-center justify-between px-4 md:px-8 py-2.5 max-w-7xl mx-auto">
+    <div class="flex items-center justify-between px-4 md:px-8 py-2.5 max-w-[90%] mx-auto">
 
       <!-- Logo -->
       <RouterLink
@@ -14,10 +14,10 @@
         <img
           src="/img/menu-icon.png"
           alt="Bandera de los Países Bajos"
-          class="w-12 md:w-14 h-auto object-contain"
+          class="w-12 md:w-18 h-auto object-contain"
         />
-        <span class="font-serif text-base md:text-lg leading-tight font-semibold text-navigation">
-          Excursiones<br /><strong>Cartas</strong>
+        <span class="font-serif text-base md:text-lg lg:text-xl leading-tight font-semibold text-navigation">
+          <strong>Excursiones<br>Cartas</strong>
         </span>
       </RouterLink>
 
@@ -58,14 +58,14 @@
         aria-label="Menú principal"
         role="navigation"
       >
-        <ul class="flex flex-col items-center justify-center md:flex-row gap-4 md:gap-1 lg:gap-3 list-none m-0 p-0 w-full">
+        <ul class="flex flex-col items-center justify-center md:flex-row gap-4 md:gap-1 lg:gap-4 list-none m-0 p-0 w-full">
           <li v-for="link in navLinks" :key="link.to" class="w-full md:w-auto flex justify-center ">
             <RouterLink
               :to="link.to"
               :aria-label="`Ir a ${link.label}`"
-              class="block text-navigation font-bold drop-shadow md:drop-shadow-none md:font-semibold md:text-navigation font-sans text-xl md:text-sm lg:text-md
+              class="block text-navigation font-bold drop-shadow md:drop-shadow-none md:font-semibold md:text-navigation font-sans text-xl md:text-sm lg:text-xl
                      px-3 py-2 md:py-1 md:px-3 rounded-xl md:rounded-sm
-                     border-b-2 border-transparent
+                     border-b-2 lg:rounded-md lg:border-b-3 border-transparent
                      hover:border-b-navigation
                      md:hover:border-b-navigation
                      [&.router-link-active]:border-b-navigation md:[&.router-link-active]:bg-transparent
@@ -78,7 +78,7 @@
             <a
               href="tel:+34640947912"
               class="flex items-center justify-center gap-2
-                     bg-atomic md:bg-navigation text-white font-sans font-bold text-lg md:text-sm
+                     bg-atomic md:bg-navigation text-white font-sans font-bold text-lg md:text-sm lg:text-xl
                      px-6 py-3 md:px-3.5 md:py-1.5 rounded-2xl md:rounded-xl
                      shadow-[0_4px_12px_rgba(255,119,63,0.3)] md:shadow-none
                      border-none! hover:bg-atomic/90 md:hover:bg-smart-blue hover:scale-105 md:hover:scale-100

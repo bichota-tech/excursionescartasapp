@@ -92,10 +92,10 @@
       <h2 class="section-title mt-8">Excursiones Cartas</h2>
       <div class="flex flex-col items-center w-full max-w-6xl mx-auto">
 
-        <div class="flex flex-col gap-6 md:flex-row md:items-stretch w-full mb-8 stagger">
+        <div class="flex flex-col gap-0 md:flex-row md:items-stretch w-full mb-8 stagger">
           <!-- Foto -->
           <div
-            class="diagfirst w-full md:w-1/2 h-[400px] bg-top bg-cover bg-no-repeat z-[2]"
+            class="rounded-tl-[40%] w-full md:w-1/2 h-[400px] bg-top bg-cover bg-no-repeat z-[2]"
             style="background-image: url('/img/profile_yanetsis.png');"
             v-anim="'slide-right'"
             role="img"
@@ -104,10 +104,10 @@
 
           <!-- Texto -->
           <div
-            class="diagsecond w-full md:w-1/2 flex flex-col justify-center bg-atomic px-6 pt-20 pb-8 md:px-8 md:py-8 relative md:static -mt-20 md:mt-0 z-[1]"
+            class="rounded-br-[40%] w-full md:w-1/2 flex flex-col justify-center bg-atomic px-10 pt-25 pb-10 md:px-8 md:py-8 relative md:static -mt-20 md:mt-0 z-[1]"
             v-anim="'slide-left'"
           >
-            <h3 class="font-serif text-[clamp(1.2rem,3vw,1.8rem)] font-bold text-white mb-4 text-left">Yanetsis Cartas Álvarez</h3>
+            <h3 class="font-serif text-[clamp(1.2rem,3vw,1.8rem)] font-bold text-white mb-3 text-left">Yanetsis Cartas Álvarez</h3>
             <p class="font-sans text-[clamp(.9rem,2vw,1.1rem)] text-white text-left leading-relaxed">
               <strong>Licenciada en Historia del Arte</strong> con experiencia en museología, gestión del
               patrimonio y cultura. Me dedico a enseñar, coordinar y guiar excursiones académicas en
@@ -128,7 +128,7 @@
 
     <!-- ── ¿A QUIÉNES VA DIRIGIDO? ─────────────────────────── -->
     <section class="w-full px-4 md:px-8 mb-10 md:mb-14" aria-labelledby="clients-heading">
-      <h3 id="clients-heading" class="font-serif text-[clamp(1.2rem,3vw,1.8rem)] font-bold text-navigation mb-6 text-center">¿A quiénes va dirigido?</h3>
+      <h3 id="clients-heading" class="font-serif text-[clamp(1.2rem,3vw,1.8rem)] text-navigation mb-8 text-center">¿A quiénes va dirigido?</h3>
 
       <div class="flex flex-col lg:flex-row justify-center items-start gap-6 max-w-6xl mx-auto">
         <!-- Cards targets -->
@@ -136,7 +136,7 @@
           <article
             v-for="(client, i) in clients"
             :key="i"
-            :class="['flex flex-col items-center justify-center text-center p-6 gap-2 rounded-lg shadow-[5px_5px_12px_rgba(11,75,193,0.2)]', i % 2 === 0 ? 'diagfirst' : 'diagsecond']"
+            :class="['flex flex-col items-center justify-center text-center p-6 gap-2 rounded-lg bg-white/70 shadow-[5px_5px_12px_rgba(11,75,193,0.2)]', i % 2 === 0 ? 'diagfirst' : 'diagsecond']"
             v-anim="client.anim"
             role="listitem"
           >

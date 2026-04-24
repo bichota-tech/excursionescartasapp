@@ -1,7 +1,10 @@
 <template>
   <AppHeader />
+  
+  <!-- Fondo con el degradado para la transición entre páginas -->
+  <div class="fixed inset-0 z-[-5] bg-gradient-to-b from-dutch-red/100 via-white/100 to-navigation/100"></div>
 
-  <main id="main-content" tabindex="-1" class="pt-[3.9rem] md:pt-[84px] lg:pt-[3.5rem]">
+  <main id="main-content" tabindex="-1" class="pt-[3.5rem] md:pt-[65px] lg:pt-[3.5rem]">
     <RouterView v-slot="{ Component, route }">
       <Transition name="fade-page" mode="out-in">
         <component :is="Component" :key="route.path" />
