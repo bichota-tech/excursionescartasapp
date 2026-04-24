@@ -153,10 +153,10 @@
           <!-- <div class="imgbottom overflow-hidden w-full h-full" v-anim="'slide-right'">
             <img src="/img/students_canal.png" class="w-full h-full object-cover object-center block" alt="Estudiantes en los canales de Utrecht" />
           </div> -->
-          <div class="imgbottom overflow-hidden w-full h-full" v-anim="'slide-left'">
+          <div class="imgbottom overflow-hidden w-full h-full" v-anim="'slide-top'">
             <img src="/img/students_streets.png" class="w-full h-full object-cover object-center block" alt="Estudiantes explorando las calles medievales de Utrecht" />
           </div>
-          <div class="imgtop overflow-hidden w-full h-full mt-6" v-anim="'slide-left'">
+          <div class="imgtop overflow-hidden w-full h-full mt-6" v-anim="'slide-bottom'">
             <img src="/img/hero_home.png" class="w-full h-full object-cover object-center block" alt="Estudiantes con guía en los canales de los Países Bajos" />
           </div>
         </div>
@@ -238,7 +238,8 @@
       aria-label="Llamada a la acción final"
     >
       <div
-        class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 md:p-8 max-w-lg text-center text-white shadow-[0_8px_32px_rgba(0,0,0,0.3)] slide-left"
+        class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 md:p-8 max-w-lg text-center text-white shadow-[0_8px_32px_rgba(0,0,0,0.3)] "
+        v-anim="'slide-right'"
       >
         <h2 class="font-serif text-[clamp(1.5rem,3vw,2.2rem)] text-navigation mb-4">¿Listo para tu próxima aventura académica?</h2>
         <p class="font-sans text-[clamp(1rem,1.8vw,1.15rem)] mb-6 opacity-95">Únete a cientos de estudiantes que ya han descubierto los Países Bajos con nuestras rutas personalizadas.</p>
