@@ -52,7 +52,8 @@ Para ejecutar este proyecto de forma local, sigue estos pasos:
 
 ## 📝 Notas de la Migración
 
-- Se ha implementado el **History Mode** en el router para evitar el uso de `#` en las URLs.
-- Se ha rediseñado la sección "Sobre mí" para asegurar un diseño responsivo y simétrico.
-- Se han optimizado las transiciones entre vistas para una navegación fluida.
-- La gestión de datos de productos y servicios se centraliza ahora en **Pinia**.
+- **Enrutamiento Avanzado:** Se ha implementado el **History Mode** en el router para URLs limpias. Además, se configuró una política de `scrollBehavior` personalizada con retraso junto al modo `out-in` en las transiciones (`<Transition>`) para asegurar cambios de página 100% fluidos, evitando solapamientos visuales y desplazamientos bruscos no deseados al cambiar de ruta.
+- **Animaciones Optimizadas (`v-anim`):** Se perfeccionaron las directivas de _Intersection Observer_ que controlan las animaciones en el viewport. Se han ajustado las distancias de desplazamiento a medidas relativas cortas (ej. `50px` en lugar de `100%`) y se aplicó un pre-ocultamiento para evitar parpadeos, logrando una experiencia Premium sin alterar el tamaño del DOM ni generar saltos en las barras de scroll.
+- **Tailwind CSS v4:** Integración completa de la nueva versión de Tailwind a través de Vite, adaptando la sintaxis del archivo de estilos (uso directiva `@theme`) y las configuraciones del IDE de desarrollo.
+- **Diseño Refinado:** Rediseño completo de la sección "Sobre mí" y los bloques de características para asegurar un diseño responsivo, simétrico y profesional.
+- **Gestión Global:** La gestión de datos de productos y servicios se centraliza ahora eficientemente en **Pinia**.
