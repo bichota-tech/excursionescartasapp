@@ -1,7 +1,7 @@
 <template>
   <AppHeader />
 
-  <main id="main-content" tabindex="-1">
+  <main id="main-content" tabindex="-1" class="pt-[3.9rem] md:pt-[84px] lg:pt-[3.5rem]">
     <RouterView v-slot="{ Component, route }">
       <Transition name="fade-page" mode="out-in">
         <component :is="Component" :key="route.path" />

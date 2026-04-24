@@ -23,7 +23,7 @@
 
       <!-- Botón hamburguesa (móvil) -->
       <button
-        class="flex flex-col gap-1.5 md:hidden p-1.5 w-9 bg-transparent border-none cursor-pointer"
+        class="flex flex-col gap-1.5 md:hidden p-1.5 w-9 bg-transparent border-none cursor-pointer relative z-[950]"
         id="hamburguer-btn"
         :aria-expanded="appStore.menuOpen.toString()"
         aria-controls="nav-menu"
@@ -33,53 +33,56 @@
         <span
           v-for="n in 3"
           :key="n"
-          class="block w-full h-0.5 bg-navigation rounded transition-all duration-300"
-          :class="{
-            'translate-y-2 rotate-45':  n === 1 && appStore.menuOpen,
-            'opacity-0':                n === 2 && appStore.menuOpen,
-            '-translate-y-2 -rotate-45': n === 3 && appStore.menuOpen,
-          }"
+          class="block w-full h-0.5 rounded transition-all duration-300"
+          :class="[
+            appStore.menuOpen ? 'bg-navigation' : 'bg-navigation',
+            {
+              'translate-y-2 rotate-45':  n === 1 && appStore.menuOpen,
+              'opacity-0':                n === 2 && appStore.menuOpen,
+              '-translate-y-2 -rotate-45': n === 3 && appStore.menuOpen,
+            }
+          ]"
         ></span>
       </button>
 
       <!-- Navegación -->
       <nav
         :class="[
-          'fixed md:static top-0 left-0 h-screen md:h-auto w-[min(75vw,280px)] md:w-auto',
-          'bg-navigation/96 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none',
-          'pt-16 md:pt-0 px-6 md:px-0 pb-8 md:pb-0',
-          'transition-[left] duration-300 md:transition-none z-[800] md:z-auto overflow-y-auto md:overflow-visible',
-          appStore.menuOpen ? 'left-0' : 'left-[-100%]'
+          'fixed md:static top-0 left-0 h-screen md:h-auto w-full md:w-auto',
+          'bg-gradient-to-b from-dutch-red/100 via-white/100 to-navigation/100 md:bg-none md:bg-transparent backdrop-blur-lg md:backdrop-blur-none',
+          'pt-24 md:pt-0 px-6 md:px-0 pb-8 md:pb-0',
+          'transition-transform duration-300 md:transition-none z-[800] md:z-auto overflow-y-auto md:overflow-visible',
+          appStore.menuOpen ? 'translate-y-0' : '-translate-y-full md:translate-y-0'
         ]"
         id="nav-menu"
         aria-label="Menú principal"
         role="navigation"
       >
-        <ul class="flex flex-col md:flex-row md:items-center gap-4 md:gap-1 list-none m-0 p-0">
-          <li v-for="link in navLinks" :key="link.to">
+        <ul class="flex flex-col items-center justify-center md:flex-row gap-4 md:gap-1 lg:gap-3 list-none m-0 p-0 w-full">
+          <li v-for="link in navLinks" :key="link.to" class="w-full md:w-auto flex justify-center ">
             <RouterLink
               :to="link.to"
               :aria-label="`Ir a ${link.label}`"
-              class="block text-white md:text-navigation font-sans text-base md:text-sm font-medium
-                     px-3 py-2 md:py-1.5 rounded-none md:rounded
-                     border-l-[3px] md:border-l-0 border-b-2 border-transparent
-                     hover:bg-white/10 md:hover:bg-transparent
-                     hover:border-l-atomic md:hover:border-l-transparent md:hover:border-b-navigation
-                     [&.router-link-active]:bg-white/10 md:[&.router-link-active]:bg-transparent
-                     [&.router-link-active]:border-l-atomic md:[&.router-link-active]:border-l-transparent md:[&.router-link-active]:border-b-navigation
-                     transition-colors duration-200 no-underline"
+              class="block text-navigation font-bold drop-shadow md:drop-shadow-none md:font-semibold md:text-navigation font-sans text-xl md:text-sm lg:text-md
+                     px-3 py-2 md:py-1 md:px-3 rounded-xl md:rounded-sm
+                     border-b-2 border-transparent
+                     hover:border-b-navigation
+                     md:hover:border-b-navigation
+                     [&.router-link-active]:border-b-navigation md:[&.router-link-active]:bg-transparent
+                     [&.router-link-active]:text-navigation md:[&.router-link-active]:border-b-navigation
+                     transition-all duration-200 no-underline text-center"
               @click="appStore.closeMenu"
             >{{ link.label }}</RouterLink>
           </li>
-          <li>
+          <li class="mt-4 md:mt-0">
             <a
               href="tel:+34640947912"
-              class="flex items-center gap-1.5 mt-4 md:mt-0
-                     bg-atomic md:bg-navigation text-white font-sans font-bold
-                     px-3.5 py-2 md:py-1.5 rounded-xl
-                     shadow-[0_4px_12px_rgba(255,119,63,0.2)] md:shadow-none
-                     border-none! hover:bg-atomic/90 md:hover:bg-smart-blue
-                     transition-colors duration-200 no-underline"
+              class="flex items-center justify-center gap-2
+                     bg-atomic md:bg-navigation text-white font-sans font-bold text-lg md:text-sm
+                     px-6 py-3 md:px-3.5 md:py-1.5 rounded-2xl md:rounded-xl
+                     shadow-[0_4px_12px_rgba(255,119,63,0.3)] md:shadow-none
+                     border-none! hover:bg-atomic/90 md:hover:bg-smart-blue hover:scale-105 md:hover:scale-100
+                     transition-all duration-200 no-underline"
               aria-label="Llamar al +34 640 947 912"
               @click="appStore.closeMenu"
             >
