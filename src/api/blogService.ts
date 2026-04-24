@@ -1,4 +1,4 @@
-import { sanity } from './SanityClient'
+import { sanity } from './sanityClient'
 
 // Obtain minimal fields for lists to avoid overfetching
 export const getPosts = async () => {
