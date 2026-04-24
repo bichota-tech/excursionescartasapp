@@ -7,7 +7,7 @@
     >
       <!-- Imagen watermark de fondo -->
       <img
-        src="/img/menu-icon.png"
+        src="/img/menu-icon-640w.webp"
         alt=""
         aria-hidden="true"
         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[clamp(14rem,26vw,20rem)] h-auto opacity-[0.07] pointer-events-none select-none"

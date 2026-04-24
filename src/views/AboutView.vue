@@ -3,7 +3,12 @@
 
     <!-- Hero -->
     <section class="page-hero" aria-label="Cabecera Sobre Mí">
-      <img src="/img/profile_yanetsis.png" alt="Yanetsis Cartas Álvarez ante la arquitectura holandesa" />
+      <img 
+        src="/img/profile_yanetsis-1920w.webp" 
+        srcset="/img/profile_yanetsis-640w.webp 640w, /img/profile_yanetsis-1024w.webp 1024w"
+        sizes="100vw"
+        alt="Yanetsis Cartas Álvarez ante la arquitectura holandesa" 
+      />
       <div class="page-hero-content slide-left">
         <h1>Sobre Mí</h1>
         <p>Historia del Arte <span class="text-atomic font-bold">•</span> Museología <span class="text-atomic font-bold">•</span> Patrimonio Cultural</p>
@@ -20,7 +25,7 @@
           <!-- Imagen -->
           <div
             class="diagfirst w-[100%] lg:h-[83vh] md:w-[45%] md:h-[60vw] md:max-h-[65vw] bg-cover bg-center shrink-0"
-            style="background-image: url('/img/students_museum.png');"
+            style="background-image: url('/img/students_museum-1920w.webp');"
             v-anim="'slide-right'"
             role="img"
             aria-label="Fotografía de Yanetsis"
@@ -138,7 +143,7 @@ const methods = [
 <style scoped>
 /* CTA section con imagen de fondo */
 .about-cta {
-  background-image: url('/img/students_streets.png');
+  background-image: url('/img/students_streets-1920w.webp');
   background-position: center;
   background-size: cover;
 }

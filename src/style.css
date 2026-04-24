@@ -37,6 +37,11 @@ html, body { scroll-behavior: smooth; cursor: default; overflow-x: hidden; }
 a { cursor: pointer; }
 button { cursor: pointer; }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
 /* =============================================
    VARIABLES CSS (compatibilidad con estilos legacy)
    ============================================= */

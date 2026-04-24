@@ -2,7 +2,13 @@
   <div class="blog-view">
     <!-- Hero -->
     <section class="page-hero" aria-label="Cabecera Blog">
-      <img src="/img/blog_rembrandt.png" alt="Escena en estilo pictórico holandés de estudiantes en un museo" fetchpriority="high" />
+      <img 
+        src="/img/blog_rembrandt-1920w.webp" 
+        srcset="/img/blog_rembrandt-640w.webp 640w, /img/blog_rembrandt-1024w.webp 1024w"
+        sizes="100vw"
+        alt="Escena en estilo pictórico holandés de estudiantes en un museo" 
+        fetchpriority="high" 
+      />
       <div class="page-hero-content slide-left">
         <h1>Blog</h1>
         <p>Arte, patrimonio e historia de los Países Bajos</p>

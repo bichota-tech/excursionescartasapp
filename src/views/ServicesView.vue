@@ -3,7 +3,12 @@
 
     <!-- Hero -->
     <section class="page-hero" aria-label="Cabecera Servicios">
-      <img src="/img/students_canal.png" alt="Estudiantes en un canal holandés" />
+      <img 
+        src="/img/students_canal-1920w.webp" 
+        srcset="/img/students_canal-640w.webp 640w, /img/students_canal-1024w.webp 1024w"
+        sizes="100vw"
+        alt="Estudiantes en un canal holandés" 
+      />
       <div class="page-hero-content slide-left">
         <h1>Nuestros Servicios</h1>
         <p>Excursiones académicas diseñadas a medida para universitarios hispanohablantes</p>
@@ -63,6 +68,8 @@
           >
             <img
               :src="dest.img"
+              :srcset="`${dest.img.replace('.webp', '-640w.webp')} 640w, ${dest.img.replace('.webp', '-1024w.webp')} 1024w`"
+              sizes="(max-width: 640px) 100vw, 50vw"
               :alt="dest.imgAlt"
               class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.08]"
             />
@@ -147,10 +154,10 @@ const targets = [
 ]
 
 const destinations = [
-  { anim: 'slide-left',   img: '/img/utrecht_aerial.png',  imgAlt: 'Vista aérea de Utrecht con su famosa Torre Dom',          city: 'Utrecht',  desc: 'Torre Dom, canales históricos, Centraal Museum, Dom Cathedral y el Pandhof medieval.' },
-  { anim: 'slide-top',    img: '/img/students_museum.png', imgAlt: 'Interior de museo holandés con estudiantes',               city: 'Ámsterdam', desc: 'Rijksmuseum, Van Gogh Museum, Stedelijk Museum y el Canal Ring UNESCO.' },
-  { anim: 'slide-bottom', img: '/img/hero_home.png',       imgAlt: 'Estudiantes en los canales holandeses',                   city: 'La Haya',   desc: 'Mauritshuis (La Ronda de Noche, La Joven de la Perla), Gemeentemuseum Den Haag.' },
-  { anim: 'slide-right',  img: '/img/students_streets.png',imgAlt: 'Estudiantes explorando calles medievales holandesas',     city: 'Delft',     desc: 'Ciudad natal de Vermeer, con sus canales únicos y un legado cerámico y pictórico incomparable.' },
+  { anim: 'slide-left',   img: '/img/utrecht_aerial.webp',  imgAlt: 'Vista aérea de Utrecht con su famosa Torre Dom',          city: 'Utrecht',  desc: 'Torre Dom, canales históricos, Centraal Museum, Dom Cathedral y el Pandhof medieval.' },
+  { anim: 'slide-top',    img: '/img/students_museum.webp', imgAlt: 'Interior de museo holandés con estudiantes',               city: 'Ámsterdam', desc: 'Rijksmuseum, Van Gogh Museum, Stedelijk Museum y el Canal Ring UNESCO.' },
+  { anim: 'slide-bottom', img: '/img/hero_home.webp',       imgAlt: 'Estudiantes en los canales holandeses',                   city: 'La Haya',   desc: 'Mauritshuis (La Ronda de Noche, La Joven de la Perla), Gemeentemuseum Den Haag.' },
+  { anim: 'slide-right',  img: '/img/students_streets.webp',imgAlt: 'Estudiantes explorando calles medievales holandesas',     city: 'Delft',     desc: 'Ciudad natal de Vermeer, con sus canales únicos y un legado cerámico y pictórico incomparable.' },
 ]
 
 const includesList = [
@@ -171,15 +178,15 @@ const whyUs = [
 
 <style scoped>
 .plane-bg {
-  background-image: url('/img/plane.png');
+  background-image: url('/img/plane-640w.webp');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto;
 }
 
 /* Parallax con imagen de fondo */
 .servcontent {
-  background-image: url('/img/utrecht_aerial.png');
+  background-image: url('/img/utrecht_aerial-1920w.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -10,7 +10,7 @@
           aria-hidden="true"
           title="Video de fondo con vistas de los Países Bajos"
           class="w-full h-[clamp(23rem,60vw,40rem)] md:h-[clamp(500px,80vh,700px)] object-cover [border-radius:0_0_15px_15px] saturate-[3]"
-          poster="/img/utrecht_aerial.png" alt="Vista panorámica de los Países Bajos"
+          poster="/img/utrecht_aerial-1024w.webp" alt="Vista panorámica de los Países Bajos"
         >
           <source src="/video/utrecht_background.mp4" type="video/mp4" />
         </video>
@@ -19,7 +19,7 @@
       <!-- Contenido sobre el vídeo -->
       <div class="absolute inset-0 flex flex-col items-center justify-center px-4">
         <img
-          src="/img/menu-icon.png"
+          src="/img/menu-icon-640w.webp"
           alt="Bandera de los Países Bajos"
           aria-hidden="true"
           class="absolute top-[20%] right-[15%] w-[clamp(8rem,20vw,12rem)] h-auto z-[2] md:top-[25%]"
@@ -73,7 +73,7 @@
         <!-- Imagen con badge de experiencia -->
         <div
           class="diagfirst stagger relative w-full md:w-1/2 h-[clamp(25rem,60vh,35rem)] bg-center bg-cover bg-no-repeat flex items-center justify-center"
-          style="background-image: url('/img/students_canal.png');"
+          style="background-image: url('/img/students_canal-1024w.webp');"
           role="img"
           aria-label="Fotografía de estudiantes en excursión"
         >
@@ -96,7 +96,7 @@
           <!-- Foto -->
           <div
             class="rounded-tl-[40%] w-full md:w-1/2 h-[400px] bg-top bg-cover bg-no-repeat z-[2]"
-            style="background-image: url('/img/profile_yanetsis.png');"
+            style="background-image: url('/img/profile_yanetsis-1024w.webp');"
             v-anim="'slide-right'"
             role="img"
             aria-label="Fotografía de Yanetsis"
@@ -151,13 +151,25 @@
             <img src="/img/students_museum.png" class="w-full h-full object-cover object-center block" alt="Grupo de estudiantes visitando un museo holandés" />
           </div> -->
           <!-- <div class="imgbottom overflow-hidden w-full h-full" v-anim="'slide-right'">
-            <img src="/img/students_canal.png" class="w-full h-full object-cover object-center block" alt="Estudiantes en los canales de Utrecht" />
+            <img src="/img/students_canal.webp" class="w-full h-full object-cover object-center block" alt="Estudiantes en los canales de Utrecht" />
           </div> -->
           <div class="imgbottom overflow-hidden w-full h-full" v-anim="'slide-top'">
-            <img src="/img/students_streets.png" class="w-full h-full object-cover object-center block" alt="Estudiantes explorando las calles medievales de Utrecht" />
+            <img 
+              src="/img/students_streets-1024w.webp" 
+              srcset="/img/students_streets-640w.webp 640w, /img/students_streets-1024w.webp 1024w"
+              sizes="(max-width: 640px) 100vw, 50vw"
+              class="w-full h-full object-cover object-center block" 
+              alt="Estudiantes explorando las calles medievales de Utrecht" 
+            />
           </div>
           <div class="imgtop overflow-hidden w-full h-full mt-6" v-anim="'slide-bottom'">
-            <img src="/img/hero_home.png" class="w-full h-full object-cover object-center block" alt="Estudiantes con guía en los canales de los Países Bajos" />
+            <img 
+              src="/img/hero_home-1024w.webp" 
+              srcset="/img/hero_home-640w.webp 640w, /img/hero_home-1024w.webp 1024w"
+              sizes="(max-width: 640px) 100vw, 50vw"
+              class="w-full h-full object-cover object-center block" 
+              alt="Estudiantes con guía en los canales de los Países Bajos" 
+            />
           </div>
         </div>
       </div>
@@ -201,7 +213,14 @@
 
         <!-- Avión decorativo -->
         <div class="absolute bottom-[80%] right-[-5%] w-full z-[0] pointer-events-none" aria-hidden="true">
-          <img src="/img/plane.png" alt="" aria-hidden="true" class="w-[100%] md:w-[70%] lg:w-[50%] lg:relative lg:top-auto lg:right-auto" />
+          <img 
+            src="/img/plane-1024w.webp" 
+            srcset="/img/plane-640w.webp 640w, /img/plane-1024w.webp 1024w"
+            sizes="(max-width: 640px) 100vw, 50vw"
+            alt="" 
+            aria-hidden="true" 
+            class="w-[100%] md:w-[70%] lg:w-[50%] lg:relative lg:top-auto lg:right-auto" 
+          />
         </div>
 
         <!-- Por qué elegirnos -->
@@ -289,7 +308,7 @@ const whyUs = [
 <style scoped>
 /* Sección servicios: parallax con imagen de fondo */
 .services-parallax {
-  background-image: url('/img/utrecht_aerial.png');
+  background-image: url('/img/utrecht_aerial-1920w.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -298,7 +317,7 @@ const whyUs = [
 
 /* CTA final: imagen de fondo */
 .footer-cta-bg {
-  background-image: url('/img/students_canal.png');
+  background-image: url('/img/students_canal-1920w.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

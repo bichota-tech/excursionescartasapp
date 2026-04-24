@@ -12,7 +12,7 @@
         aria-label="Excursiones Cartas - Ir al inicio"
       >
         <img
-          src="/img/menu-icon.png"
+          src="/img/menu-icon-640w.webp"
           alt="Bandera de los Países Bajos"
           class="w-12 md:w-18 h-auto object-contain"
         />

@@ -3,7 +3,12 @@
 
     <!-- Hero -->
     <section class="page-hero" aria-label="Cabecera Contacto">
-      <img src="/img/students_streets.png" alt="Estudiantes en las calles de Utrecht" />
+      <img 
+        src="/img/students_streets-1920w.webp" 
+        srcset="/img/students_streets-640w.webp 640w, /img/students_streets-1024w.webp 1024w"
+        sizes="100vw"
+        alt="Estudiantes en las calles de Utrecht" 
+      />
       <div class="page-hero-content slide-left">
         <h1>Contacto</h1>
         <p>Cuéntanos tu proyecto y diseñamos la excursión perfecta</p>
@@ -190,7 +195,9 @@
       <section class="mb-0 px-0" aria-label="Sección de cierre">
         <div class="relative overflow-hidden min-h-[25rem] flex items-center">
           <img
-            src="/img/utrecht_aerial.png"
+            src="/img/utrecht_aerial-1920w.webp"
+            srcset="/img/utrecht_aerial-640w.webp 640w, /img/utrecht_aerial-1024w.webp 1024w"
+            sizes="100vw"
             alt="Vista aérea de Utrecht"
             class="absolute inset-0 w-full h-full object-cover brightness-40 saturate-[1.3]"
             aria-hidden="true"
