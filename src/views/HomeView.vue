@@ -22,7 +22,7 @@
           src="/img/menu-icon.png"
           alt="Bandera de los Países Bajos"
           aria-hidden="true"
-          class="absolute top-[3%] right-0 w-[clamp(8rem,20vw,12rem)] h-auto z-[1]"
+          class="absolute top-[5%] right-[15%] w-[clamp(8rem,20vw,12rem)] h-auto z-[5]"
         />
         <div
           class="flex flex-col items-center gap-4 px-4 py-6 bg-[#0f0f0f9a] rounded-2xl w-full max-w-xl md:max-w-[60%] text-center z-[2] slide-left"

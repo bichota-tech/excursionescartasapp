@@ -3,7 +3,7 @@
 
   <main id="main-content" tabindex="-1">
     <RouterView v-slot="{ Component, route }">
-      <Transition name="fade-page">
+      <Transition name="fade-page" mode="out-in">
         <component :is="Component" :key="route.path" />
       </Transition>
     </RouterView>

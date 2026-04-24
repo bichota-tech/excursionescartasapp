@@ -74,7 +74,20 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition
-    return { top: 0, behavior: 'smooth' }
+    
+    return new Promise((resolve) => {
+      // Esperamos 250ms (el tiempo de la transición fade-page) para subir al inicio
+      // Así evitamos que la página brinque mientras sale la vista anterior
+      setTimeout(() => {
+        // Desactivar temporalmente el smooth scroll nativo para asegurar un salto instantáneo
+        document.documentElement.style.scrollBehavior = 'auto';
+        resolve({ top: 0 });
+        
+        setTimeout(() => {
+          document.documentElement.style.scrollBehavior = '';
+        }, 50);
+      }, 250);
+    });
   },
 })
 
