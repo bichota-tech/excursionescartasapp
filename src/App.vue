@@ -2,7 +2,7 @@
   <AppHeader />
   
   <!-- Fondo con el degradado para la transición entre páginas -->
-  <div class="fixed inset-0 z-[-5] bg-gradient-to-b from-dutch-red/100 via-white/100 to-navigation/100"></div>
+  <div class="fixed inset-0 z-[-5] bg-gradient-to-b from-dutch-red/95 via-white/95 to-navigation/85"></div>
 
   <main id="main-content" tabindex="-1" class="pt-[3.5rem] md:pt-[65px] lg:pt-[3.5rem]">
     <RouterView v-slot="{ Component, route }">

@@ -9,7 +9,7 @@
           autoplay muted loop playsinline
           aria-hidden="true"
           title="Video de fondo con vistas de los Países Bajos"
-          class="w-full h-[clamp(23rem,60vw,40rem)] md:h-[clamp(500px,80vh,700px)] object-cover [border-radius:0_0_15px_15px] saturate-[1.8]"
+          class="w-full h-[clamp(23rem,60vw,40rem)] md:h-[clamp(500px,80vh,700px)] object-cover [border-radius:0_0_15px_15px] saturate-[3]"
           poster="/img/utrecht_aerial.png" alt="Vista panorámica de los Países Bajos"
         >
           <source src="/video/utrecht_background.mp4" type="video/mp4" />
@@ -301,6 +301,7 @@ const whyUs = [
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  filter: brightness(0.75);
 }
 
 /* Botones reutilizables en esta vista */
