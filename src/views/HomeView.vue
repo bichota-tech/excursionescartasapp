@@ -10,9 +10,9 @@
           aria-hidden="true"
           title="Video de fondo con vistas de los Países Bajos"
           class="w-full h-[clamp(23rem,60vw,40rem)] md:h-[clamp(500px,80vh,700px)] object-cover [border-radius:0_0_15px_15px] saturate-[1.8]"
-          poster="/public/img/utrecht_aerial.png" alt="Vista panorámica de los Países Bajos"
+          poster="/img/utrecht_aerial.png" alt="Vista panorámica de los Países Bajos"
         >
-          <source src="/public/video/utrecht_background.mp4" type="video/mp4" />
+          <source src="/video/utrecht_background.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -77,7 +77,7 @@
           role="img"
           aria-label="Fotografía de estudiantes en excursión"
         >
-          <div class="stamp absolute top-[65%] right-[0%] md:right-[-5%] rounded-full border-2 border-dashed border-atomic flex items-center justify-center w-[clamp(10rem,25vw,14rem)] h-[clamp(10rem,25vw,14rem)]">
+          <div class="stamp absolute rotate-6 top-[65%] right-[0%] md:right-[-5%] rounded-full border-2 border-dashed border-atomic flex items-center justify-center w-[clamp(10rem,25vw,14rem)] h-[clamp(10rem,25vw,14rem)]">
             <div class="rounded-full bg-atomic flex flex-col items-center justify-center w-[clamp(9rem,22vw,13rem)] h-[clamp(9rem,22vw,13rem)] p-3">
               <span class="text-white font-sans text-[clamp(2rem,4vw,3rem)] font-bold">+ 18</span>
               <span class="text-white font-sans text-[clamp(.9rem,3vw,1.1rem)] font-bold text-center">Años de Experiencia</span>
@@ -128,7 +128,7 @@
 
     <!-- ── ¿A QUIÉNES VA DIRIGIDO? ─────────────────────────── -->
     <section class="w-full px-4 md:px-8 mb-10 md:mb-14" aria-labelledby="clients-heading">
-      <h3 id="clients-heading" class="font-serif text-[clamp(1.2rem,3vw,1.8rem)] text-navigation mb-8 text-center">¿A quiénes va dirigido?</h3>
+      <h3 id="clients-heading" class="font-serif text-[clamp(1.2rem,3vw,1.5rem)] text-navigation mb-8 text-center">¿A quiénes va dirigido?</h3>
 
       <div class="flex flex-col lg:flex-row justify-center items-start gap-6 max-w-6xl mx-auto">
         <!-- Cards targets -->

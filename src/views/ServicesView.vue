@@ -3,7 +3,7 @@
 
     <!-- Hero -->
     <section class="page-hero" aria-label="Cabecera Servicios">
-      <img src="/img/students_museum.png" alt="Estudiantes visitando un museo holandés" />
+      <img src="/img/students_canal.png" alt="Estudiantes en un canal holandés" />
       <div class="page-hero-content slide-left">
         <h1>Nuestros Servicios</h1>
         <p>Excursiones académicas diseñadas a medida para universitarios hispanohablantes</p>
@@ -40,7 +40,7 @@
           <article
             v-for="(target, i) in targets"
             :key="i"
-            :class="['flex flex-col items-center text-center gap-3 p-7 shadow-[5px_5px_12px_rgba(11,74,193,0.25)]', i % 2 === 0 ? 'diagfirst' : 'diagsecond']"
+            :class="['flex flex-col items-center text-center bg-white/70 gap-3 p-7 shadow-[5px_5px_12px_rgba(11,74,193,0.25)]', i % 2 === 0 ? 'diagfirst' : 'diagsecond']"
             v-anim="target.anim"
           >
             <i class="bi bi-bookmark-check-fill text-[1.6rem] text-atomic" aria-hidden="true"></i>
@@ -53,7 +53,7 @@
       <!-- ── Destinos Principales ─────────────────────────── -->
       <section class="plane-bg  px-4 md:px-8 mb-10 md:mb-14" aria-labelledby="travel-heading">
         <h2 id="travel-heading" class="section-title">Destinos Principales</h2>
-        <div class="grid grid-cols-2 gap-2 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-5xl mx-auto">
           
           <div
             v-for="(dest, i) in destinations"
@@ -66,9 +66,9 @@
               :alt="dest.imgAlt"
               class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.08]"
             />
-            <div class="absolute inset-0 flex flex-col items-center justify-end px-4 pb-7 bg-gradient-to-t from-navigation/70 to-transparent translate-y-[30%] hover:translate-y-0 transition-transform duration-300">
-              <h3 class="font-serif font-bold text-[clamp(1rem,2.5vw,1.8rem)] text-white text-center mb-20 w-full">{{ dest.city }}</h3>
-              <p class="font-sans font-semibold text-[clamp(.8rem,1.5vw,1.1rem)] text-white/85 w-[70%] text-center">{{ dest.desc }}</p>
+            <div class="absolute inset-0 flex flex-col items-center justify-end gap-8 px-4 pb-7 bg-gradient-to-t from-navigation/70 to-transparent translate-y-[50%] hover:translate-y-0 transition-transform duration-300">
+              <h3 class="font-serif font-bold text-[clamp(1.1rem,2.5vw,1.8rem)] text-white text-center mb-8 w-full">{{ dest.city }}</h3>
+              <p class="font-sans font-semibold text-[clamp(.9rem,1.5vw,1.2rem)] text-white/85 w-[70%] text-center">{{ dest.desc }}</p>
             </div>            
           </div>
         </div>

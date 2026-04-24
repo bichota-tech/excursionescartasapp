@@ -138,7 +138,7 @@ const methods = [
 <style scoped>
 /* CTA section con imagen de fondo */
 .about-cta {
-  background-image: url('/img/students_museum.png');
+  background-image: url('/img/students_streets.png');
   background-position: center;
   background-size: cover;
 }
